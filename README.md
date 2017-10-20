@@ -1,10 +1,11 @@
 # Webapp Final Project:
 <hr/>
+
 ### Members:
-BA: Roque
-QA: Villanueva
-DEV: MALLARI
-     MUNOZ
+BA: Roque <br/>
+QA: Villanueva <br/>
+DEV: MALLARI <br/>
+     MUNOZ <br/>
 <hr/>
 
 ### How to deploy the website:
