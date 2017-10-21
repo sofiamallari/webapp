@@ -15,7 +15,7 @@
 			<div class="form-group col-md-4 forms">
 				<input type = 'email' name = 'email' placeholder = 'email' class="form-control" required>
 				<br>
-				<input type = 'password' name = 'password' placeholder = 'password' class="form-control">
+				<input type = 'password' name = 'password' placeholder = 'password' class="form-control" required>
 				<br>
 				<input type = 'submit' name = 'login' value = 'Login'>
 				<br>
