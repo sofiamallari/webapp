@@ -8,22 +8,30 @@
 		$gender=trim(filter_input(INPUT_POST,"gender",FILTER_SANITIZE_SPECIAL_CHARS));
 		$Status = $_POST['Status'];
 		
+		$noError = True;
 		include '../connect/conn.php';
 	
 		$q="SELECT * from reg WHERE email= '".$email."'";
 		$result=mysqli_query($conn,$q);
 		if(mysqli_num_rows($result)>=1){	
 			echo "record already exists<br>";
-		if((preg_match("/^[a-zA-Z]*$/",$fname))==0){
-			echo "Only letters and white space allowed for Firstname<br>";
-		}if((preg_match("/^[a-zA-Z]*$/",$lname))==0){
-			echo "Only letters and white space allowed for Lastname<br>";
-		}if((preg_match("/^[a-zA-Z]*$/",$mname))==0){
-			echo "Only letters and white space allowed for Middlename<br>";
-		}if((preg_match('/\./', $email)) == 0){
+			$noError = false;
+		}
+		
+		if((preg_match("/^[a-zA-Z ]+$/",$fname))!=0){
+				echo "Only letters and white space allowed for Firstname<br>";
+				$noError = false;
+		}else if((preg_match("/^[a-zA-Z ]+$/",$lname))!=0){
+				echo "Only letters and white space allowed for Lastname<br>";
+				$noError = false;
+		}else if((preg_match("/^[a-zA-Z ]+$/",$mname))!=0){
+				echo "Only letters and white space allowed for Middlename<br>";
+				$noError = false;
+		}else if((preg_match('/\./', $email)) == 0){
 			echo "Invalid Email Address<br>";
-		}}
-		else{
+		}
+		
+		if($noError == True){
 		$query = "INSERT INTO reg(email, password, fname, lname, mname, gender, Status)
 							VALUES('$email', '$password', '$fname', '$lname', '$mname', '$gender','$Status')";
 		// procedural
