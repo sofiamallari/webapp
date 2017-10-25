@@ -3,6 +3,12 @@
 			<?php 
 			ob_start(); 
 			include("../final/heading.php");
+
+			if(!empty($_SESSION['user_id'])){
+                # NON EMPTY SESSION SHOULD BE REDIRECTED
+
+                header("location: index.php");
+            }
 			?>
 			<link href="reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
