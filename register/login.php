@@ -10,7 +10,7 @@
 
 			if(!empty($_SESSION['user_id'])){
                 # NON EMPTY SESSION SHOULD BE REDIRECTED
-                header("location: index.php");
+                header("location: ../connect/index.php");
             }
 
 			?>
@@ -65,8 +65,6 @@
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
 							$_SESSION['logged_in'] = 1;
-							session_unset();
-							session_destroy();
 							
 						}
 						else if($row['Status']==1){

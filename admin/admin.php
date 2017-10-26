@@ -9,6 +9,7 @@ ob_start();
 if(empty($_SESSION['user_id']))
 	header("location: ../register/login.php");
 else{
+	ob_start();
 	include '../connect/conn.php';
 	include('table.html');
 
