@@ -1,6 +1,17 @@
 <?php 
-include('table.html');
-include('../connect/conn.php');
+session_start();
+ob_start();
+/*if(isset($_SESSION['logged_in'])==0){
+	header('Location: ../admin/admin.php');
+}else{
+	header('Location: ../register/register.php');
+}*/
+if(empty($_SESSION['user_id']))
+	header("location: ../register/login.php");
+else{
+	include '../connect/conn.php';
+	include('table.html');
+
 $query = "SELECT * FROM reg";
 $result = mysqli_query($conn, $query); 
 if (mysqli_num_rows($result) == 0) {
@@ -101,5 +112,5 @@ if(isset($_GET['iddd'])){
 }
 
 echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
-
+}
 ?>
