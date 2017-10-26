@@ -2,9 +2,19 @@
 	<head>
 			<?php 
 			ob_start(); 
+<<<<<<< HEAD
 			include("../connect/header.php");
 			
 			
+=======
+			include("../final/heading.php");
+
+			if(!empty($_SESSION['user_id'])){
+                # NON EMPTY SESSION SHOULD BE REDIRECTED
+
+                header("location: index.php");
+            }
+>>>>>>> refs/remotes/origin/master
 			?>
 			<link href="reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
