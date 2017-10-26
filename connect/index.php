@@ -13,31 +13,31 @@ include('header.php');
 
 	<div class="carousel-inner ">
     <div class="item active">
-				<a href="#"><video autoplay loop muted width="100%"><source src="images/ap.mp4" type="video/mp4"></video></a>
+				<a href="#"><video autoplay loop muted width="100%"><source src="../final/images/ap.mp4" type="video/mp4"></video></a>
 				<div class="carousel-caption"></div>
 	</div>
 	<div class="item">
-           <a href="#"><video autoplay loop muted width="100%" ><source src="images/bulgari.mp4" type="video/mp4"></video></a>
+           <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/bulgari.mp4" type="video/mp4"></video></a>
 			<div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-           <a href="#"><video autoplay loop muted width="100%" ><source src="images/graff.mp4" type="video/mp4"></video></a>
+           <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/graff.mp4" type="video/mp4"></video></a>
 			<div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-      <a href="#"><video autoplay loop muted width="100%" ><source src="images/rolex.mp4" type="video/mp4"></video></a>
+      <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/rolex.mp4" type="video/mp4"></video></a>
       <div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-		<a href="#"><video autoplay loop muted width="100%" ><source src="images/tiffany.mp4" type="video/mp4"></video></a>
+		<a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/tiffany.mp4" type="video/mp4"></video></a>
 		<div class="carousel-caption"> </div>
 	</div>
 
 	<div class="item">
-      <a href="#"><video autoplay loop muted width="100%" ><source src="images/tissot.mp4" type="video/mp4"></video></a>
+      <a href="#"><video autoplay loop muted width="100%" ><source src="..final/images/tissot.mp4" type="video/mp4"></video></a>
       <div class="carousel-caption"></div>
     </div>
 
@@ -236,18 +236,18 @@ include('header.php');
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
                     <h3> Products </h3>
                     <ul>
-                        <li> <a href="audemale.html"> Audemars Piguet </a> </li>
-                        <li> <a href="lange.html"> A. Lange </a> </li>
-                        <li> <a href="baume.html"> Baume & Mercier </a> </li>
-                        <li> <a href="breguet.html"> Breguet </a> </li>
-						<li> <a href="bv.html"> Bvlgari </a> </li>
-                        <li> <a href="chow.html"> Chopard </a> </li>
-						<li> <a href="elliot.html"> Elliot </a> </li>
-						<li> <a href="graff.html"> Graff </a> </li>
-                        <li> <a href="GucciWomen.html"> Gucci </a> </li>
-                        <li> <a href="hugo.html"> Hugo </a> </li>
-						<li> <a href="rado.html"> Rado </a> </li>
-						<li> <a href="rolex.html"> Rolex </a> </li>
+                        <li> <a href="../final/audemale.html"> Audemars Piguet </a> </li>
+                        <li> <a href="../final/lange.html"> A. Lange </a> </li>
+                        <li> <a href="../final/baume.html"> Baume & Mercier </a> </li>
+                        <li> <a href="../final/breguet.html"> Breguet </a> </li>
+						<li> <a href="../final/bv.html"> Bvlgari </a> </li>
+                        <li> <a href="../final/chow.html"> Chopard </a> </li>
+						<li> <a href="../final/elliot.html"> Elliot </a> </li>
+						<li> <a href="../final/graff.html"> Graff </a> </li>
+                        <li> <a href="../final/GucciWomen.html"> Gucci </a> </li>
+                        <li> <a href="../final/hugo.html"> Hugo </a> </li>
+						<li> <a href="../final/rado.html"> Rado </a> </li>
+						<li> <a href="../final/rolex.html"> Rolex </a> </li>
                     </ul>
                 </div>
                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">

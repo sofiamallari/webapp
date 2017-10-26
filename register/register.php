@@ -18,13 +18,13 @@
 			$noError = false;
 		}
 		
-		if((preg_match("/^[a-zA-Z ]+$/",$fname))!=0){
+		if((preg_match("/^[a-zA-Z ]+$/",$fname))==0){
 				echo "Only letters and white space allowed for Firstname<br>";
 				$noError = false;
-		}else if((preg_match("/^[a-zA-Z ]+$/",$lname))!=0){
+		}else if((preg_match("/^[a-zA-Z ]+$/",$lname))==0){
 				echo "Only letters and white space allowed for Lastname<br>";
 				$noError = false;
-		}else if((preg_match("/^[a-zA-Z ]+$/",$mname))!=0){
+		}else if((preg_match("/^[a-zA-Z ]+$/",$mname))==0){
 				echo "Only letters and white space allowed for Middlename<br>";
 				$noError = false;
 		}else if((preg_match('/\./', $email)) == 0){

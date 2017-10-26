@@ -1,7 +1,7 @@
 <html>
 	<head>
 			<?php 
-			include("../final/heading.php");
+			include("../connect/header.php");
 			?>
 			<link href="reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
@@ -15,7 +15,7 @@
 			<h1>Register</h1>
 			<h5>Personal Information &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 
 			&ensp;&ensp;&ensp;Terms and Conditions</h5>
-			<hr class="hr">
+			
 			<form method = 'post' action = 'register.php'>
 				<div class="form-group col-md-4 forms">
 					<input type="text" name="fname" class="form-control" placeholder="First name" required>

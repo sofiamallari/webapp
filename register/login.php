@@ -2,7 +2,9 @@
 	<head>
 			<?php 
 			ob_start(); 
-			include("../final/heading.php");
+			include("../connect/header.php");
+			
+			
 			?>
 			<link href="reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
@@ -28,6 +30,7 @@
 </html>
 
 <?php
+	
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
@@ -53,11 +56,15 @@
 							header("location: ../admin/admin.php");
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
+							session_unset();
+							session_destroy();
 						}
 						else if($row['Status']==1){
 							header("location: ../register/home.php");
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
+							session_unset();
+							session_destroy();
 						}
 						else if($row['Status']==0){
 							echo "Account not activated";

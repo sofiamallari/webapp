@@ -9,9 +9,9 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="fonts.css" rel="stylesheet">
-<link href="underline.css" type="text/css" rel="stylesheet">
-<link href="footer.css" type="text/css" rel="stylesheet">
+<link href="../final/fonts.css" rel="stylesheet">
+<link href="../final/css/underline.css" type="text/css" rel="stylesheet">
+<link href="../final/footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
@@ -152,13 +152,13 @@ navbar-fixed-top {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ><img src="A.png" id="#logo" class="col-md-6 col-xs-5"></a>
+      <a class="navbar-brand" href="#" ><img src="../final/A.png" id="#logo" class="col-md-6 col-xs-5"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-center">
-        <li><a href="Home.php">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="../connect/index.php">Home<span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -166,16 +166,16 @@ navbar-fixed-top {
 				<span class="caret"></span>
 		  </a>
           <ul class="dropdown-menu">
-            <li><a href="lange.html">A.Lange</a></li>
-            <li><a href="baume.html">Baume & Mercier</a></li>
-			<li><a href="breguet.html">Breguet</a></li>
-			<li><a href="chopard.html">Chopard</a></li>
-            <li><a href="elliot.html">Elliot</a></li>
+            <li><a href="../final/lange.html">A.Lange</a></li>
+            <li><a href="../final/baume.html">Baume & Mercier</a></li>
+			<li><a href="../final/breguet.html">Breguet</a></li>
+			<li><a href="..final/chopard.html">Chopard</a></li>
+            <li><a href="../final/elliot.html">Elliot</a></li>
 			<li><a href="#">Hugo</a></li>
-            <li><a href="mont.html">Montblanc</a></li>
+            <li><a href="../final/mont.html">Montblanc</a></li>
             <li><a href="#">Patek Philippe</a></li>
-			<li><a href="rado.html">Rado</a></li>
-            <li><a href="rolex.html">Rolex</a></li>
+			<li><a href="../final/rado.html">Rado</a></li>
+            <li><a href="../final/rolex.html">Rolex</a></li>
 			<li><a href="#">Tissot</a></li>
           </ul>
         </li>
@@ -187,15 +187,15 @@ navbar-fixed-top {
 				<span class="caret"></span>
 		  </a>
           <ul class="dropdown-menu">
-            <li><a href="audfemale.html">Audemars Piguet</a></li>
-			<li><a href="BaumeAndMercier.html">Baume & Mercier</a></li>
-            <li><a href="BregutWomen.html">Breguet</a></li>
-			<li><a href="BvlgariWomen.html">Bvlgari</a></li>
-			<li><a href="ChopardWomen.html">Chopard</a></li>
-            <li><a href="GraffWomen.html">Graff Diamonds</a></li>
-			<li><a href="GucciWomen.html">Gucci</a></li>
-            <li><a href="omega.html">Omega</a></li>
-            <li><a href="rolexwomen.html">Rolex</a></li>
+            <li><a href="../final/audfemale.html">Audemars Piguet</a></li>
+			<li><a href="../final/BaumeAndMercier.html">Baume & Mercier</a></li>
+            <li><a href="../final/BregutWomen.html">Breguet</a></li>
+			<li><a href="../final/BvlgariWomen.html">Bvlgari</a></li>
+			<li><a href="../final/ChopardWomen.html">Chopard</a></li>
+            <li><a href="../final/GraffWomen.html">Graff Diamonds</a></li>
+			<li><a href="../final/GucciWomen.html">Gucci</a></li>
+            <li><a href="../final/omega.html">Omega</a></li>
+            <li><a href="../final/rolexwomen.html">Rolex</a></li>
           </ul>
         </li>
 
