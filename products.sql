@@ -35,27 +35,27 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`prod_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
-INSERT INTO `products` (`prod_id`,`brand`, `price`, `quantity`, `description`, `color`, `gender`)
-VALUES (1, 'alange','$52650','100','Datograph Up and Downblack','black','male'),
-VALUES (2, 'baume','$1495','100','Automatic Chronograph','black','male'),
-VALUES (3, 'breguet','$1495','100','Automatic Chronograph','black','male'),
-VALUES (4, 'chopard','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (5, 'elliot','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (6, 'hugo','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (7, 'montblanc','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (8, 'patek','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (9, 'patek','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (10, 'rado','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (11, 'rolex','$4495','100','Mille Miglia GTS Chrono','black','male'),
-VALUES (12, 'audemars','$38995','100','Royal Oak Automatic Blue Women','black','woman'),
-VALUES (13, 'baume','$1495','100','Silver Diamond','black','woman'),
-VALUES (14, 'breguet','$17495','100','Classic Dial Automatic','black','woman'),
-VALUES (15, 'bvlgari','$17495','100','White Dial Stainless Steel','black','woman')
-VALUES (16, 'chopard','$1495','100','Automatic Chronograph Women','black','woman'),
-VALUES (17, 'graff','$75000000','100','Floral Tourbillion Blue Mother Of Pearl','black','woman'),
-VALUES (18, 'gucci','$1495','100','Automatic Chronograph Women','black','woman'),
-VALUES (19, 'omega','$1495','100','Automatic Chronograph Women','black','woman'),
-VALUES (20, 'rolex','$1495','100','Automatic Chronograph Women','black','woman'),
+INSERT INTO `products` (`prod_id`,`brand`, `price`, `quantity`, `description`, `color`, `gender`)VALUES 
+(1, 'alange','$52650','100','Datograph Up and Downblack','black','male'),
+(2, 'baume','$1495','100','Automatic Chronograph','black','male'),
+(3, 'breguet','$1495','100','Automatic Chronograph','black','male'),
+(4, 'chopard','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(5, 'elliot','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(6, 'hugo','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(7, 'montblanc','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(8, 'patek','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(9, 'patek','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(10, 'rado','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(11, 'rolex','$4495','100','Mille Miglia GTS Chrono','black','male'),
+(12, 'audemars','$38995','100','Royal Oak Automatic Blue Women','black','woman'),
+(13, 'baume','$1495','100','Silver Diamond','black','woman'),
+(14, 'breguet','$17495','100','Classic Dial Automatic','black','woman'),
+(15, 'bvlgari','$17495','100','White Dial Stainless Steel','black','woman'),
+(16, 'chopard','$1495','100','Automatic Chronograph Women','black','woman'),
+(17, 'graff','$75000000','100','Floral Tourbillion Blue Mother Of Pearl','black','woman'),
+(18, 'gucci','$1495','100','Automatic Chronograph Women','black','woman'),
+(19, 'omega','$1495','100','Automatic Chronograph Women','black','woman'),
+(20, 'rolex','$1495','100','Automatic Chronograph Women','black','woman');
 
 
 
