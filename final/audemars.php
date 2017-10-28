@@ -1,185 +1,30 @@
 <?php 
 include("prod_header.php");
+include('../connect/conn.php');
+$result=mysqli_query($conn,"select * FROM audewomen");
+$row=mysqli_fetch_assoc($result);
+$num_rows=mysqli_num_rows($result);
 ?>
- <div id='content' class='row-fluid'>
-    <h3>Category</h3>
-    <div class="panel-group col-md-3 col-xs-12" id="accordion">
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Color</a>
-         </h4>
-       </div>
-       <div id="collapse1" class="panel-collapse collapse in">
-         <div class="panel-body">
-           <ul class="nav nav-tabs nav-stacked">
-             <li><a href="">Rose Gold</a></li>
-             <li><a href="">Black</a></li>
-             <li><a href="">Gray</a></li>
-             <li><a href="">Gold</a></li>
-             <li><a href="">Silver</a></li>
-           </ul>
-         </div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-           Watch Movement</a>
-         </h4>
-       </div>
-       <div id="collapse2" class="panel-collapse collapse">
-         <div class="panel-body">
-           <ul class="nav nav-tabs nav-stacked">
-             <li><a href="">Rolex</a></li>
-             <li><a href="">audemale</a></li>
-             <li><a href="">Seiko</a></li>
-             <li><a href="">Patek Philippe</a></li>
-           </ul>
-         </div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-           Price Range</a>
-         </h4>
-       </div>
-       <div id="collapse3" class="panel-collapse collapse">
-         <div class="panel-body">
-           <ul class="nav nav-tabs nav-stacked">
-             <li><a href=""> </a></li>
-             <li><a href=""></a></li>
-             <li><a href=""> </a></li>
-             <li><a href=""> </a></li>
-           </ul>
-         </div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-           Size</a>
-         </h4>
-       </div>
-       <div id="collapse4" class="panel-collapse collapse">
-         <div class="panel-body"><ul class="nav nav-tabs nav-stacked">
-           <li><a href="">Small</a></li>
-           <li><a href="">Regular</a></li>
-           <li><a href="">Large</a></li>
-           <li><a href="">Titan</a></li>
-         </ul></div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
-           Material</a>
-         </h4>
-       </div>
-       <div id="collapse5" class="panel-collapse collapse">
-         <div class="panel-body"><ul class="nav nav-tabs nav-stacked">
-           <li><a href="">Gold</a></li>
-           <li><a href="">Diamond</a></li>
-           <li><a href="">Mixed<a></li>
-         </ul></div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
-           Case</a>
-         </h4>
-       </div>
-       <div id="collapse6" class="panel-collapse collapse">
-         <div class="panel-body"><ul class="nav nav-tabs nav-stacked">
-           <li><a href=""> </a></li>
-           <li><a href=""> </a></li>
-           <li><a href=""> </a></li>
-           <li><a href=""> </a></li>
-         </ul></div>
-       </div>
-     </div>
-     <div class="panel panel-default">
-       <div class="panel-heading">
-         <h4 class="panel-title">
-           <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
-           Style</a>
-         </h4>
-       </div>
-       <div id="collapse7" class="panel-collapse collapse">
-         <div class="panel-body">
-           <ul class="nav nav-tabs nav-stacked">
-             <li><a href="">Casual</a></li>
-             <li><a href="">Diver</a></li>
-             <li><a href="">Sports</a></li>
-             <li><a href="">General</a></li>
-           </ul>
-        </div>
-       </div>
-     </div>
-   </div>
-
-    <!-- Main Enclosing Div for products -->
-    <div  class="container col-md-9">
-
-       <div class="container col-xs-12">
-         <h1>15 Results</h1>
-
-         <form>
-           <label> SORT BY: </label>
-           <select>
-             <option/>Most Viewed
-             <option/>POPULARITY
-             <option/>Price
-             <option/>Rating
-           </select>
-         </form>
-         <hr class="hr-page">
-       </div>
-
-       <div class="panel-table-container col-lg-4 col-md-4 col-sm-1">
+ 
+      <div class="panel-table-container col-lg-4 col-md-4 col-sm-1">
          <table class="panel-table">
-           <tr class="body"><td id="td11">
-                <a data-toggle="modal" data-target="#modal1">
-                  <img src="images/audemale/a1.jpg" class="col-xs-12">
-                </a>
-           </td></tr>
-		   <tr><td>
-				<footer class="panel-footer">
-				<p class="brand">AUDEMARS PIGUET</p>
-				<p class="desc">Royal Oak Automatic</p>
-				<p class="price">$38995</p>
-				</footer>
-				</td>
-				</tr>
-           </table>
+           <tr class="body">
+			   <td id="td11">
+					<a data-toggle="modal" data-target="#modal1">
+					 <img src='images/audemale/a2.jpg' class='col-xs-12'>
+					</a>
+			   </td>
+		   </tr>
+		   
+			<tr><td>
+				   <footer class="panel-footer">
+				   <p class="brand">AUDEMARS PIGUET</p>
+				   <p class="desc">Royal Oak Automatic Silver Dial</p>
+				   <p class="price">$38995</p>
+				   </footer>
+			</td></tr>
+         </table>
        </div>
-
-       <div class="panel-table-container col-lg-4 col-md-4 col-sm-1">
-         <table class="panel-table">
-           <tr class="body"><td id="td11">
-                <a data-toggle="modal" data-target="#modal1">
-                  <img src="images/audemale/a2.jpg" class="col-xs-12">
-                </a>
-           </td></tr>
-      <tr><td>
-       <footer class="panel-footer">
-       <p class="brand">AUDEMARS PIGUET</p>
-       <p class="desc">Royal Oak Automatic Silver Dial</p>
-       <p class="price">$38995</p>
-       </footer>
-       </td>
-       </tr>
-           </table>
-       </div>
-
-
 
        <div class="panel-table-container col-lg-4 col-md-4 col-sm-1">
          <table class="panel-table">
