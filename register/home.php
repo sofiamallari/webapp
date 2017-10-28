@@ -84,28 +84,28 @@
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> First Name: </label>
 									<div class = "col-sm-8">
-										<input type = "text" class = "form-control" name = "fname" placeholder = '<?php echo $row['fname'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "fname" value = '<?php echo $row['fname'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Middle Name:  </label>
 									<div class = "col-sm-8">
-										<input type = "text" class = "form-control" name = "mname" placeholder = '<?php echo $row['mname'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "mname" value = '<?php echo $row['mname'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Surname:  </label>
 									<div class = "col-sm-8">
-										<input type = "text" class = "form-control" name = "lname" placeholder = '<?php echo $row['lname'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "lname" value = '<?php echo $row['lname'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Email: </label>
 									<div class = "col-sm-8">
-										<input type = "email" class = "form-control" name = "email" placeholder = '<?php echo $row['email'] ?>'> <br>
+										<input type = "email" class = "form-control" name = "email" value = '<?php echo $row['email'] ?>'> <br>
 									</div>
 								</div>
 
@@ -183,42 +183,42 @@
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Contact Information: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "contact" minlength = "11" placeholder = '<?php echo $row['contact'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Street: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "street" placeholder = '<?php echo $row['street'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "street" value = '<?php echo $row['street'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Barangay: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "barangay" placeholder = '<?php echo $row['barangay'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "barangay" value = '<?php echo $row['barangay'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> City: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "city" placeholder = '<?php echo $row['city'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "city" value = '<?php echo $row['city'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Zip: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "zip" minlength = "4" placeholder = '<?php echo $row['zip'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "zip" minlength = "4" value = '<?php echo $row['zip'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
 									<label class = "control-label col-sm-2"> Landmark: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "landmark" placeholder = '<?php echo $row['landmark'] ?>'> <br>
+										<input type = "text" class = "form-control" name = "landmark" value = '<?php echo $row['landmark'] ?>'> <br>
 									</div>
 								</div>
 
@@ -241,15 +241,12 @@
 			if(isset($_POST['register'])){
 
 				//unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
-				
-				$user=$_POST['user_id'];
 				$fname = $_POST['fname'];
 				$lname = $_POST['lname'];
 				$mname = $_POST['mname'];
 				$email = $_POST['email'];
 
 				$sql = "UPDATE reg set 
-						`user_id`='".$user."',
 						`fname`='".$fname."',
 						`lname`='".$lname."',
 						`mname`='".$mname."',
@@ -268,7 +265,7 @@
 
 			if(isset($_POST['submit'])){
 
-				unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
+				//unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
 
 				$contact = $_POST['contact'];
 				$street = $_POST['street'];
