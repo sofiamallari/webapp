@@ -1,12 +1,11 @@
 <?php
-
+    ob_start();
 ?>
 <html>
 	<head>
 	<?php
 		include("../connect/header.php");
         require_once("../connect/conn.php");
-		ob_start();
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad
@@ -58,7 +57,7 @@
 		}
 
 		else{
-			$result = $conn2->query("SELECT * FROM registration WHERE email= '". $email ."' AND password = '$password'");
+			$result = $conn2->query("SELECT * FROM reg WHERE email= '". $email ."' AND password = '$password'");
 
 			if($result){
                 if((preg_match('/\./', $email)) == 0){
@@ -70,19 +69,22 @@
                 else{
                     $row = $result->fetch_assoc();
                     if($row['Status']==2){
-                            header("location: ../admin/admin.php");
+                            echo "2";
                             session_start();
                             $_SESSION['user_id'] = $row['user_id'];
                             $_SESSION['logged_in'] = 1;
                             $_SESSION['status'] = 2;
+
+                            header("location: ../admin/admin.php");
                     }
                     else if($row['Status']==1){
-                            header("location: ../register/home.php");
+                            echo "1";
+
                             session_start();
                             $_SESSION['user_id'] = $row['user_id'];
                             $_SESSION['logged_in'] = 1;
                             $_SESSION['status'] = 1;
-
+                            header("location: ../register/home.php");
                     }
                     else if($row['Status']==0){
                             echo "Account not activated";

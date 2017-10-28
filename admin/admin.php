@@ -68,10 +68,9 @@ if (mysqli_num_rows($result) == 0) {
                     <tr>
 						
                       <?php
-						  
-									while($row =(mysqli_fetch_assoc($result))){
+                        while($row =(mysqli_fetch_assoc($result))){
 									if($row['Status']!=2){
-									?>
+                      ?>
 										<tr>
 										<td> <?php echo $row['user_id']?><td>
 										 <?php echo $row['email']?>
@@ -92,7 +91,7 @@ if (mysqli_num_rows($result) == 0) {
 										</td>
 										</tr>
                     </tr>	
-					
+                </tbody>
 <?php		
 }
 else{
