@@ -1,12 +1,12 @@
 <?php
-	session_start();
+
 ?>
 <html>
 	<head>
 	<?php
 		include("../connect/header.php");
         require_once("../connect/conn.php");
-		#ob_start();
+		ob_start();
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad
@@ -16,7 +16,13 @@
 			if($_SESSION['status'] == 1){
 			    header('locaiton: home.php');
             }
-            
+            else if($_SESSION['status'] == 2){
+			    header('locaiton: ../admin/admin.php');
+            }
+            else if($_SESSION['status'] == 0){
+                header('location: unactivated.php');
+            }
+
 		}
 	?>
 		<link href="reg.css" type="text/css" rel="stylesheet">
@@ -52,39 +58,38 @@
 		}
 
 		else{
-			$result = $conn2->query("SELECT * FROM reg WHERE email= '". $email ."' AND password = '$password'");
-			
+			$result = $conn2->query("SELECT * FROM registration WHERE email= '". $email ."' AND password = '$password'");
+
 			if($result){
-			if((preg_match('/\./', $email)) == 0){
-				echo "Invalid email address.";
-			}
-			else if($result->num_rows == 0){
-				echo "Invalid Email or Password";
-			}
-			else{
-						$row = $result->fetch_assoc();
-						if($row['Status']==2){
-							header("location: ../admin/admin.php");
-							session_start();
-							$_SESSION['user_id'] = $row['user_id'];
-							$_SESSION['logged_in'] = 1;
-							$_SESSION['status'] = 2;
-							
-						}
-						else if($row['Status']==1){
-							header("location: ../register/home.php");
-							session_start();
-							$_SESSION['user_id'] = $row['user_id'];
-							$_SESSION['logged_in'] = 1;
+                if((preg_match('/\./', $email)) == 0){
+                    echo "Invalid email address.";
+                }
+                else if($result->num_rows == 0){
+                    echo "Invalid Email or Password";
+                }
+                else{
+                    $row = $result->fetch_assoc();
+                    if($row['Status']==2){
+                            header("location: ../admin/admin.php");
+                            session_start();
+                            $_SESSION['user_id'] = $row['user_id'];
+                            $_SESSION['logged_in'] = 1;
+                            $_SESSION['status'] = 2;
+                    }
+                    else if($row['Status']==1){
+                            header("location: ../register/home.php");
+                            session_start();
+                            $_SESSION['user_id'] = $row['user_id'];
+                            $_SESSION['logged_in'] = 1;
                             $_SESSION['status'] = 1;
-						
-						}
-						else if($row['Status']==0){
-							echo "Account not activated";
-						}
-						else{
-							echo "User does not exist";
-						}
+
+                    }
+                    else if($row['Status']==0){
+                            echo "Account not activated";
+                    }
+                    else{
+                            echo "User does not exist";
+                    }
 				}
 			}
 			else{
