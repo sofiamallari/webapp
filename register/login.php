@@ -1,44 +1,47 @@
 <?php
 	session_start();
-	session_destroy();
 ?>
 <html>
 	<head>
-			<?php 
-			ob_start(); 
-			include("../connect/header.php");
+	<?php
+		include("../connect/header.php");
+        require_once("../connect/conn.php");
+		#ob_start();
 
-			if(!empty($_SESSION['user_id'])){
-				session_destroy();
-                # NON EMPTY SESSION SHOULD BE REDIRECTED
-                header("location: ../connect/index.php");
+		if(!empty($_SESSION['logged_in'])){
+			# Edit by Vlad
+			# It should not destory the session,
+			# if it is destroyed, then basically we have 2 logout functionalities
+
+			if($_SESSION['status'] == 1){
+			    header('locaiton: home.php');
             }
-
-			?>
-			<link href="reg.css" type="text/css" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
-			<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet"> 
-			<link href="https://fonts.googleapis.com/css?family=Manuale|Playfair+Display:400i" rel="stylesheet"> 
+            
+		}
+	?>
+		<link href="reg.css" type="text/css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Manuale|Playfair+Display:400i" rel="stylesheet"> 
 	</head>
 
 	<body>
-			<form method = 'post' action = ''>
-			<div class="form-group col-md-4 forms">
-				<input type = 'email' name = 'email' placeholder = 'email' class="form-control" required>
-				<br>
-				<input type = 'password' name = 'password' placeholder = 'password' class="form-control" required>
-				<br>
-				<input type = 'submit' name = 'login' value = 'Login'>
-				<br>
-				<br>
-				No Account? <a href = 'reg.php'>Register here</a>.
-			<div>
-			</form>
-		</center>
+		<form method = 'post' action = ''>
+		<div class="form-group col-md-4 forms">
+			<input type = 'email' name = 'email' placeholder = 'email' class="form-control" required>
+			<br>
+			<input type = 'password' name = 'password' placeholder = 'password' class="form-control" required>
+			<br>
+			<input type = 'submit' name = 'login' value = 'Login'>
+			<br>
+			<br>
+			No Account? <a href = 'reg.php'>Register here</a>.
+		<div>
+		</form>		
 	</body>
 </html>
 
-<?php
+	<?php
 	
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
@@ -49,7 +52,6 @@
 		}
 
 		else{
-			include '../connect/conn.php';
 			$result = $conn2->query("SELECT * FROM reg WHERE email= '". $email ."' AND password = '$password'");
 			
 			if($result){
@@ -66,6 +68,7 @@
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
 							$_SESSION['logged_in'] = 1;
+							$_SESSION['status'] = 2;
 							
 						}
 						else if($row['Status']==1){
@@ -73,6 +76,7 @@
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
 							$_SESSION['logged_in'] = 1;
+                            $_SESSION['status'] = 1;
 						
 						}
 						else if($row['Status']==0){
