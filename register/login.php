@@ -1,12 +1,8 @@
-<?php
-	session_start();
-?>
 <html>
 	<head>
 	<?php
 		include("../connect/header.php");
-        require_once("../connect/conn.php");
-		#ob_start();
+		ob_start();
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad
@@ -42,7 +38,7 @@
 </html>
 
 	<?php
-	
+	include("../connect/conn.php");
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
