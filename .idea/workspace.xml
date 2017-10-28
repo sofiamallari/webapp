@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a802eae5-3e89-41b7-b709-901bdf247b4c" name="Default" comment="Fixing LOGIN">
+    <list default="true" id="a802eae5-3e89-41b7-b709-901bdf247b4c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin.php" afterPath="$PROJECT_DIR$/admin/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/login.php" afterPath="$PROJECT_DIR$/register/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register/wish.php" afterPath="$PROJECT_DIR$/register/wish.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +16,7 @@
       <file leaf-file-name="wish.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/register/wish.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
+            <state relative-caret-position="1122">
               <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
               <folding>
                 <marker date="1509178702188" expanded="true" signature="351:385" ph="SELECT * FRO... reg" />
@@ -164,12 +161,20 @@
       <updated>1508974924338</updated>
       <workItem from="1508974926213" duration="286000" />
       <workItem from="1509162502619" duration="1038000" />
-      <workItem from="1509172750522" duration="5994000" />
+      <workItem from="1509172750522" duration="6615000" />
     </task>
+    <task id="LOCAL-00001" summary="WISHLIST is waiting">
+      <created>1509178770647</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1509178770647</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7318000" />
+    <option name="totallyTimeSpent" value="7939000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -202,7 +207,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixing LOGIN" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing LOGIN" />
+    <MESSAGE value="WISHLIST is waiting" />
+    <option name="LAST_COMMIT_MESSAGE" value="WISHLIST is waiting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -371,7 +377,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/register/wish.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
+        <state relative-caret-position="1122">
           <caret line="51" column="29" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
           <folding>
             <marker date="1509178702188" expanded="true" signature="351:385" ph="SELECT * FRO... reg" />
