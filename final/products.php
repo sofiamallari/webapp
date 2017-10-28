@@ -1,12 +1,6 @@
 <?php
 include('prod_header.php');
 include('../connect/conn.php');
-$query="Select * from products";
-$result=($conn,$query);
-if (mysqli_num_rows($result) == 0) {
-		echo "No products found";
-		exit;
-}
 ?>
 		 <div class="container col-xs-12">
          <p id="nav2"><?php echo "Results"?></p>
@@ -18,11 +12,33 @@ if (mysqli_num_rows($result) == 0) {
          </form>
          <hr class="hr-page">
        </div>
-       <div class="panel-table-container col-lg-4 col-md-4 col-sm-1">
-         <table class="panel-table">
-           <tr class="body"><td id="td11">
+	   
+       <div class="panel-table-container col-lg-4 ">
+         <table class="panel-table col-lg-2">
+           <tr>
+				<?php
+				$query="Select * from products where brand='alange'";
+				$result=mysqli_query($conn,$query);
+				if (mysqli_num_rows($result) == 0) {
+						echo "No products found";
+						exit;
+				}
+				else{
+					while($row = (mysqli_fetch_assoc($result))){
+						echo $row['location'];
+						echo "<td><img src='".$row['location']."'></td>";
+						
+					}
+				};
+				?>
+				<?php
+				
+				?>
+		   </tr>
+		   
+		   <tr class="body"><td id="td11">
                 <a data-toggle="modal" data-target="#modal1">
-                  <img src="images/audemale/a1.jpg" class="col-xs-12">
+                  
                 </a>
            </td></tr>
 		   <tr><td>

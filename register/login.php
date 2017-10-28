@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-=======
 <?php
     ob_start();
 ?>
->>>>>>> bbb5ecc5cd3c8c8cf4ee776f69ee709c165c9592
 <html>
 	<head>
 	<?php
 		include("../connect/header.php");
-<<<<<<< HEAD
-		ob_start();
-=======
         require_once("../connect/conn.php");
->>>>>>> bbb5ecc5cd3c8c8cf4ee776f69ee709c165c9592
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad
