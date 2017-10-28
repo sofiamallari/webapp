@@ -1,18 +1,12 @@
-<<<<<<< HEAD
-=======
 <?php
     ob_start();
 ?>
->>>>>>> bbb5ecc5cd3c8c8cf4ee776f69ee709c165c9592
 <html>
 	<head>
 	<?php
 		include("../connect/header.php");
-<<<<<<< HEAD
 		ob_start();
-=======
-        require_once("../connect/conn.php");
->>>>>>> bbb5ecc5cd3c8c8cf4ee776f69ee709c165c9592
+	        require_once("../connect/conn.php");
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad
@@ -21,13 +15,13 @@
 
 			if($_SESSION['status'] == 1){
 			    header('locaiton: home.php');
-            }
-            else if($_SESSION['status'] == 2){
-			    header('locaiton: ../admin/admin.php');
-            }
-            else if($_SESSION['status'] == 0){
-                header('location: unactivated.php');
-            }
+		        }
+		        else if($_SESSION['status'] == 2){
+    				header('locaiton: ../admin/admin.php');
+		        }
+		        else if($_SESSION['status'] == 0){
+				header('location: unactivated.php');
+   		         }
 
 		}
 	?>
@@ -74,34 +68,31 @@
                     echo "Invalid Email or Password";
                 }
                 else{
-                    $row = $result->fetch_assoc();
-                    if($row['Status']==2){
-                            echo "2";
-                            session_start();
-                            $_SESSION['user_id'] = $row['user_id'];
-                            $_SESSION['logged_in'] = 1;
-                            $_SESSION['status'] = 2;
-
-                            header("location: ../admin/admin.php");
-                    }
-                    else if($row['Status']==1){
-                            echo "1";
-
-                            session_start();
-                            $_SESSION['user_id'] = $row['user_id'];
-                            $_SESSION['logged_in'] = 1;
-                            $_SESSION['status'] = 1;
-                            header("location: ../register/home.php");
-                    }
-                    else if($row['Status']==0){
-                            echo "Account not activated";
-                    }
-                    else{
+			$row = $result->fetch_assoc();
+			if($row['Status']==2){
+				echo "2";
+				session_start();
+				$_SESSION['user_id'] = $row['user_id'];
+				$_SESSION['logged_in'] = 1;
+				$_SESSION['status'] = 2;
+				header("location: ../admin/admin.php");
+                    	}
+	                else if($row['Status']==1){
+				echo "1";
+	                        session_start();
+				$_SESSION['user_id'] = $row['user_id'];
+				$_SESSION['logged_in'] = 1;
+	                        $_SESSION['status'] = 1;
+       		                header("location: ../register/home.php");
+                    	}
+	                else if($row['Status']==0){
+        	                echo "Account not activated";
+                	}
+	                else{
                             echo "User does not exist";
-                    }
-				}
-			}
-			else{
+                    	}
+		}
+		}else{
 				echo "User does not exist";
 			}
 		}
