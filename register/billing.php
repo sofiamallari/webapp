@@ -27,5 +27,5 @@ if(isset($_POST['register'])){
 	mysqli_query($conn,$r);
 	echo $conn->error;
 }
-header("location:../register/billing.php");
+header("location:../register/home.php");
 ?>

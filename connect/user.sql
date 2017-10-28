@@ -35,6 +35,12 @@ CREATE TABLE IF NOT EXISTS `reg` (
   `mname` varchar(50) NOT NULL,
   `gender` varchar (50) NOT NULL,
   `Status` varchar(1) NOT NULL,
+  `contact` varchar(50) NOT NULL,
+  `street` varchar(50) NOT NULL,
+  `barangay` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `zip` varchar(4) NOT NULL,
+  `landmark` varchar(50) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
@@ -42,8 +48,9 @@ CREATE TABLE IF NOT EXISTS `reg` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `reg` (`user_id`, `email`, `password`, `fname`, `lname`, `mname`, `gender`,`Status`) VALUES
-(1, 'sofiamallari0919@gmail.com', '33f5a7e8f4f310f9774894d807728e3c', 'sofia', 'mallari', 'batacan', 'female', '0'),
+INSERT INTO `reg` (`user_id`, `email`, `password`, `fname`, `lname`, `mname`, `gender`,`Status`,`contact`,`street`,`barangay`,`city`,`zip`,`landmark`) VALUES
+(1, 'sofiamallari0919@gmail.com', '33f5a7e8f4f310f9774894d807728e3c', 'sofia', 'mallari', 'batacan', 'female', '0','09452117139','south','tandang sora','quezon city','1106','sm'),
+
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

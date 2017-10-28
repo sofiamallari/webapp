@@ -9,6 +9,7 @@
 			include("../connect/header.php");
 
 			if(!empty($_SESSION['user_id'])){
+				session_destroy();
                 # NON EMPTY SESSION SHOULD BE REDIRECTED
                 header("location: ../connect/index.php");
             }
@@ -72,8 +73,7 @@
 							session_start();
 							$_SESSION['user_id'] = $row['user_id'];
 							$_SESSION['logged_in'] = 1;
-							session_unset();
-							session_destroy();
+						
 						}
 						else if($row['Status']==0){
 							echo "Account not activated";

@@ -7,9 +7,7 @@
 </head>
 <?php
 	ob_start(); 
-	include("../final/heading.php");
-	session_start();
-
+	include("heading.php");
 	if(empty($_SESSION['user_id']))
 		header("location: ../register/login.php");
 	else{
@@ -18,81 +16,291 @@
 		// user procedural connection
 		$result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
 		$row = mysqli_fetch_assoc($result);
-		echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
 		echo "<h1>Account Details</h1>";
 	}
 ?>	
-			<center>
-			<h1>Billing Information</h1>
-			<form method = 'post' action = 'home.php'>
-				<input type = 'text' name = 'user_id' value="<?php echo $row['user_id']?>">
-				<br>
-				<input type = 'text' name = 'fname' value="<?php echo $row['fname']?>" required>
-				<br>
-				<input type = 'text' name = 'lname' value="<?php echo $row['lname']?>" required>
-				<br>
-				<input type = 'text' name = 'mname' value="<?php echo $row['mname']?>" required>
-				<br>
-				<input type = 'text' name = 'contact' placeholder = 'Contact Number' required>
-				<br>
-				<input type="text" name="street" placeholder="Street Address"> 
-				<br>
-				<input type="text" name="barangay" placeholder="Barangay"> 
-				<br>
-				<input type="text" name="city" placeholder="City"> 
-				<br>
-				<input type="text" name="zip" placeholder="Zip code"> 
-				<br>
-				<input type="text" name="landmark" placeholder="Landmark"> 
-				<br>
-				<input type = 'submit' name = 'register' value= 'Register'>
-				<input type='hidden' name="Status" value="0">
-			</form>
-		</center>
+			<style>
+			.table-borderless > tbody > tr > td,
+			.table-borderless > tbody > tr > th,
+			.table-borderless > tfoot > tr > td,
+			.table-borderless > tfoot > tr > th,
+			.table-borderless > thead > tr > td,
+			.table-borderless > thead > tr > th {
+			    border: none;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	
+		<div class = "container">
+			<div class = "row">
+
+				<div class = "col-sm-12">
+					<div class = "panel">
+						<div class = "panel-heading">
+							<h3> Account Details </h3>
+						</div>
+
+						<div class = "panel-body">
+							<table class = "table table-borderless" class = "col-sm-6">
+								<tbody>
+									<tr>
+										<th> Email Address </th>
+										<td> <?php echo $row['email'] ?> </td>
+									</tr>
+									<tr>
+										<th> Given Name </th>
+										<td> <?php echo $row['fname'] ?> </td>
+										<th> Gender </th>
+										<td> <?php echo $row['gender'] == 'male' ? 'Male' : "Female"; ?> </td>
+									</tr>
+									<tr>
+										<th> Middle Name </th>
+										<td> <?php echo $row['mname'] ?> </td>
+									</tr>
+									<tr>
+										<th> Surname </th>
+										<td> <?php echo $row['lname'] ?> </td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class = "col-sm-12">
+					<div class = "panel">
+
+						<div class = "panel-heading">
+							<h3> Edit Account Information </h3>
+						</div>
+
+						<div class = "panel-body col-sm-8">
+
+							<form class = 'form-horizontal' method = 'post' action = 'home.php'>
+								
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> First Name: </label>
+									<div class = "col-sm-8">
+										<input type = "text" class = "form-control" name = "fname" placeholder = '<?php echo $row['fname'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Middle Name:  </label>
+									<div class = "col-sm-8">
+										<input type = "text" class = "form-control" name = "mname" placeholder = '<?php echo $row['mname'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Surname:  </label>
+									<div class = "col-sm-8">
+										<input type = "text" class = "form-control" name = "lname" placeholder = '<?php echo $row['lname'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Email: </label>
+									<div class = "col-sm-8">
+										<input type = "email" class = "form-control" name = "email" placeholder = '<?php echo $row['email'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "col-sm-2">
+									<button type = "submit" class = "btn btn-primary" name = 'register'> Modify</button>
+								</div>
+
+								<div class = "col-sm-6">
+									<input type = "hidden" class = "form-control" name = "Status" value = "0">
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class = "container">
+			<div class = "row">
+
+				<div class = "col-sm-12">
+					<div class = "panel">
+					
+						<div class = "panel-heading col-sm-6">
+							<h3> Billing Address</h3>
+						</div>
+						
+						<div class = "panel-body">
+							<table class = "table table-borderless" class = "col-sm-6">
+								<tbody>
+									<tr>
+										<th>Contact Number: </th>
+										<td><?php echo $row['contact'];?> </td>
+										<th>Street: </th>
+										<td><?php echo $row['street'];?> </td>
+									</tr>
+									<tr>
+										<th>Barangay: </th>
+										<td> <?php echo $row['barangay'];?></td>
+										<th>City: </th>
+										<td><?php echo $row['city'];?> </td>
+									</tr>
+									<tr>
+										<th>Zip: </th>
+										<td><?php echo $row['zip']; ?> </td>
+										<th>Landmark: </th>
+										<td><?php echo $row['landmark']; ?> </td>
+									</tr>
+								</tbody>
+							</table>
+							
+						</div>
+						
+						
+						
+						
+					</div>
+					
+				</div>
+
+				<div class = "col-sm-12">
+					<div class = "panel">
+
+						<div class = "panel-heading">
+							<h3> Billing Information </h3>
+						</div>
+
+						<div class = "panel-body">
+
+							<form class = 'form-horizontal' method = 'post' action = 'home.php'>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Contact Information: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "contact" minlength = "11" placeholder = '<?php echo $row['contact'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Street: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "street" placeholder = '<?php echo $row['street'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Barangay: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "barangay" placeholder = '<?php echo $row['barangay'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> City: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "city" placeholder = '<?php echo $row['city'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Zip: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "zip" minlength = "4" placeholder = '<?php echo $row['zip'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2"> Landmark: </label>
+									<div class = "col-sm-10">
+										<input type = "text" class = "form-control" name = "landmark" placeholder = '<?php echo $row['landmark'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "col-sm-2">
+									<button type = "submit" class = "btn btn-primary" name = 'submit'> Update </button>
+								</div>
+						
+								<div class = "col-sm-6">
+									<input type = "hidden" class = "form-control" name = "Status" value = "0">
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	<?php
-ob_start();
-include('../connect/conn.php');
-if(isset($_POST['register'])){
-				$idd=$_POST['user_id'];
-				$fname=$_POST['fname'];
-				$lname=$_POST['lname'];
-				$mname=$_POST['mname'];
-				$contact=$_POST['contact'];
-				$street=$_POST['street'];
-				$barangay=$_POST['barangay'];
-				$city=$_POST['city'];
-				$zip=$_POST['zip'];
-				$landmark=$_POST['landmark'];
-				$r="UPDATE reg set 
+			if(isset($_POST['register'])){
+
+				//unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
+				
+				$user=$_POST['user_id'];
+				$fname = $_POST['fname'];
+				$lname = $_POST['lname'];
+				$mname = $_POST['mname'];
+				$email = $_POST['email'];
+
+				$sql = "UPDATE reg set 
+						`user_id`='".$user."',
 						`fname`='".$fname."',
 						`lname`='".$lname."',
 						`mname`='".$mname."',
+						`email`='".$email."'
+						WHERE `user_id`='".$row['user_id']."'
+						";
+				 
+				if((!(ctype_alpha($fname))) && (!(ctype_alpha($lname))) && (!(ctype_alpha($mname))))
+					echo "<div class = 'container'> <h3> <font color = 'red'> Only characters are allowed. <br> </div>";
+				else{
+					mysqli_query($conn,$sql);
+					echo $conn->error;
+				}
+			}
+			
+
+			if(isset($_POST['submit'])){
+
+				unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
+
+				$contact = $_POST['contact'];
+				$street = $_POST['street'];
+				$barangay = $_POST['barangay'];
+				$city = $_POST['city'];
+				$zip = $_POST['zip'];
+				$landmark = $_POST['landmark'];
+
+				$sql = "UPDATE reg set 
 						`contact`='".$contact."',
 						`street`='".$street."',
 						`barangay`='".$barangay."',
 						`city`='".$city."',
 						`zip`='".$zip."',
 						`landmark`='".$landmark."'
-						WHERE `user_id`='".$idd."'
+						WHERE `user_id`='".$row['user_id']."'
 						";
-	if((!(ctype_alnum($street))) && (!(ctype_alnum($barangay)))){
-		echo "Only letters and numbers are allowed for street and barangay<br>";
-	}
-	if((!(ctype_digit($contact))) && (!(ctype_digit($zip)))){
-		echo "Only numbers are allowed for zip and contact<br>";
-	}
-	if((!(ctype_alpha($city))) && (!(ctype_alpha($landmark)))){
-		echo "Only letters are allowed for city and landmark<br>";
-	}
-	if(strlen($contact) != 11){
-		echo "Contact must have 11 digits<br>";
-	}
-	else{
-	mysqli_query($conn,$r);
-	echo $conn->error;
-	}
-}
-//header("location:../register/billing.php");
+
+				if((!(ctype_alnum($street))) && (!(ctype_alnum($barangay))))
+					echo "<div class = 'container'> <h3> <font color = 'red'> Only letters and numbers are allowed for street and barangay<br> </div>";
+					echo $row['fname'];
+				
+				if((!(ctype_digit($contact))) && (!(ctype_digit($zip))))
+					echo "<div class = 'container'> <h3> <font color = 'red'> Only numbers are allowed for zip and contact<br> </div>";
+				 
+				if((!(ctype_alpha($city))) && (!(ctype_alpha($landmark))))
+					echo "<div class = 'container'> <h3> <font color = 'red'> Only letters are allowed for city and landmark <br> </div>";
+				else{
+					mysqli_query($conn,$sql);
+					echo $conn->error;
+				}
+			}
 ?>
 
 </html>
