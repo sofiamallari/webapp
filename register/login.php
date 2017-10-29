@@ -12,11 +12,11 @@
 			# It should not destory the session,
 			# if it is destroyed, then basically we have 2 logout functionalities
 
-			if($_SESSION['status'] == 1){
-			    header('locaiton: home.php');
+				if($_SESSION['status'] == 1){
+			    header('location: home.php');
 		        }
 		        else if($_SESSION['status'] == 2){
-    				header('locaiton: ../admin/admin.php');
+    				header('location: ../admin/admin.php');
 		        }
 		        else if($_SESSION['status'] == 0){
 				header('location: unactivated.php');
@@ -69,27 +69,25 @@
                 else{
 			$row = $result->fetch_assoc();
 			if($row['Status']==2){
-				echo "2";
 				session_start();
 				$_SESSION['user_id'] = $row['user_id'];
 				$_SESSION['logged_in'] = 1;
 				$_SESSION['status'] = 2;
 				header("location: ../admin/admin.php");
-                    	}
-	                else if($row['Status']==1){
-				echo "1";
-	                        session_start();
+                }
+	        else if($row['Status']==1){
+	            session_start();
 				$_SESSION['user_id'] = $row['user_id'];
 				$_SESSION['logged_in'] = 1;
-	                        $_SESSION['status'] = 1;
-       		                header("location: ../register/home.php");
-                    	}
-	                else if($row['Status']==0){
-        	                echo "Account not activated";
-                	}
-	                else{
-                            echo "User does not exist";
-                    	}
+	            $_SESSION['status'] = 1;
+       		    header("location: ../register/home.php");
+             }
+	        else if($row['Status']==0){
+        	    echo "Account not activated";
+            }
+	        else{
+                echo "User does not exist";
+            }
 		}
 		}else{
 				echo "User does not exist";
