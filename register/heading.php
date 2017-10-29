@@ -159,10 +159,10 @@ navbar-fixed-top {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-center">
-        <li><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="../connect/index.php">Home<span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 				Men
 				<span class="caret"></span>
 		  </a>
@@ -181,8 +181,8 @@ navbar-fixed-top {
             <li><a href="products.php?id=montblanc">Montblanc</a></li>
             <li><a href="products.php?id=patek">Patek Philippe</a></li>
 			<li><a href="products.php?id=rado">Rado</a></li>
-            <li><a href="products.php?id=rolex">Rolex</a></li>
-			<li><a href="products.php?id=tissot">Tissot</a></li>
+			<li><a href="products.php?id=tag">Tag Heuer</a></li>
+           
           </ul>
         </li>
 
@@ -194,14 +194,14 @@ navbar-fixed-top {
 		  </a>
           <ul class="dropdown-menu">
             <li><a href="products.php?id=audemars">Audemars Piguet</a></li>
-			<li><a href="products.php?id=baume">Baume & Mercier</a></li>
-            <li><a href="products.php?id=tissot">Breguet</a></li>
-			<li><a href="BvlgariWomen.html">Bvlgari</a></li>
-			<li><a href="ChopardWomen.html">Chopard</a></li>
-            <li><a href="GraffWomen.html">Graff Diamonds</a></li>
-			<li><a href="GucciWomen.html">Gucci</a></li>
-            <li><a href="omega.html">Omega</a></li>
-            <li><a href="rolexwomen.html">Rolex</a></li>
+			<li><a href="products.php?id=bremont">Bremont</a></li>
+            <li><a href="products.php?id=breitling">Breitling</a></li>
+			<li><a href="products.php?id=bvlgari">Bvlgari</a></li>
+			<li><a href="products.php?id=cartier">Cartier</a></li>
+            <li><a href="products.php?id=graff">Graff Diamonds</a></li>
+			<li><a href="products.php?id=gucci">Gucci</a></li>
+            <li><a href="products.php?id=omega">Omega</a></li>
+            <li><a href="products.php?id=piaget">Piaget</a></li>
           </ul>
         </li>
 

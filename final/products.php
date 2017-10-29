@@ -18,7 +18,7 @@ include('../connect/conn.php');
        </div>
 	   
        <div class="panel-table-container col-lg-12">
-         <table class="panel-table col-lg-10">
+         <table class="panel-table col-lg-12">
            <tr>
 				<?php
 				$query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'");
@@ -35,15 +35,15 @@ include('../connect/conn.php');
 							$a=$row['prod_id'];
 							$b="#modal$a";
 							echo "<a data-toggle='modal' data-target='$b'><img src='".$row['location']."'></a><br>";
-							echo " ".$row['brand']."<br>";
-							echo " ".$row['description']."<br>";
-							echo " ".$row['price']."</td>";								
+							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
+							echo "<p class='desc'>".$row['description']."</p>";
+							echo "<p class='price'>".$row['price']."</p></footer></td>";								
 						}else{
-							echo "<td><img src='".$row['location']."'><br>";	
-							echo " ".$row['prod_id']."<br>";
-							echo " ".$row['brand']."<br>";
-							echo " ".$row['description']."<br>";
-							echo " ".$row['price']."</td>";	
+							echo "<td>";
+							echo "<a data-toggle='modal' data-target='$b'><img src='".$row['location']."'></a><br>";	
+							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
+							echo "<p class='desc'>".$row['description']."</p>";
+							echo "<p class='price'>".$row['price']."</p></footer></td>";	
 						}
 						$i++;	
 					}
