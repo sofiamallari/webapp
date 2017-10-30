@@ -18,14 +18,11 @@
     $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
     $row = mysqli_fetch_assoc($result);
 ?>
-
-
 	<body>
 		<div class="col-md-10 col-md-offset-1">
             <div class="col-md-offset-1">
                 <h2>Hi <?php echo $row['fname']; echo " ".$row['fname'] ?> </h2>
             </div>
-
             <!-- TABLE FOR WISHLIST -->
             <div class="col-md-12">
                 <table class="table table-bordered">
@@ -34,20 +31,25 @@
                             <th>Brand</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Product Page</th>
+			                <th>Product Page</th>
+			                <th>Remove Item </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $query = "SELECT BRAND,NAME,PRICE,LINK from wishlist".
-                                    "JOIN products where wishlist.product_id = products.product.id";
-
+                            $query = "SELECT PROD_ID,BRAND,description,PRICE,LOCATION from products ".
+                                "JOIN wishlist where wishlist.product_id = products.product.id and wishlist.user_id = ".$_SESSION['user_id'];
                             $result = mysqli_query($conn, $query);
+
                             while($row =(mysqli_fetch_assoc($result))) {
                                 echo "<tr>";
                                     echo "<td>".$row['brand']."</td>";
-                                    echo "<td>".$row['name']."</td>";
-                                    echo "<td>".$row['price']."<td>";
+                                    echo "<td>".$row['description']."</td>";
+				                    echo "<td>".$row['price']."<td>";
+				                    echo "<td>".$row['location'];
+				                    TODO("Add glyp icon?");
+				                    echo "<td>". "<form method = 'post' action = ''><button type='submit' value=' ". $row['prod_id'] .
+                                        "'> DEL</button></form>";
                                 echo "</tr>";
                             }
                         ?>
@@ -57,3 +59,10 @@
         </div>
 	</body>
 </html>
+
+<?php
+	if(isset($_POST['del_item'])){
+			
+	}
+
+?>
