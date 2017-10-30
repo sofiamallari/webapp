@@ -32,9 +32,7 @@ include('connect/conn.php');
 					while($row = (mysqli_fetch_assoc($query))){
 						if($i%3 == 0){
 							echo "</tr><td>";
-							$a=$row['prod_id'];
-							$b="#modal$a";
-							echo "<a data-toggle='modal' data-target='$b'>";
+							echo "<a data-toggle='modal' data-target='#modal1'>";
 							echo "<img src='".$row['location']."' class='images'></a><br>";
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
@@ -62,6 +60,7 @@ include('connect/conn.php');
              <img id="item-display" src="bauwo/a13.jpg" alt=""></img></div>
       	    </div>
 			<div class="col-md-4 col-xs-12">
+			
 			<div class='product-title' style='padding-top: 2em;'><?php echo $row['brand']?></div>
 			<div class='product-desc'><?php echo $row['description'] ?></div>
 			
