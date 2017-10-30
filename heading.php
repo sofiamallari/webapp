@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<?php ob_start(); ?>
 <html>
 <head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -175,7 +174,7 @@ navbar-fixed-top {
             <li><a href="../products.php?id=montblanc">Montblanc</a></li>
             <li><a href="../products.php?id=patek">Patek Philippe</a></li>
 			<li><a href="../products.php?id=rado">Rado</a></li>
-			<li><a href="../products.php?id=tag">Tag Heuer</a></li>
+			<li><a href="../products.php?id=versace">Versace</a></li>
            
           </ul>
         </li>
@@ -188,14 +187,14 @@ navbar-fixed-top {
 		  </a>
           <ul class="dropdown-menu">
             <li><a href="../products.php?id=audemars">Audemars Piguet</a></li>
-			<li><a href="../products.php?id=bremont">Bremont</a></li>
-            <li><a href="../products.php?id=breitling">Breitling</a></li>
+		    <li><a href="../products.php?id=breitling">Breitling</a></li>
 			<li><a href="../products.php?id=bvlgari">Bvlgari</a></li>
 			<li><a href="../products.php?id=cartier">Cartier</a></li>
+			<li><a href="../products.php?id=chanel">Chanel</a></li>
             <li><a href="../products.php?id=graff">Graff Diamonds</a></li>
 			<li><a href="../products.php?id=gucci">Gucci</a></li>
             <li><a href="../products.php?id=omega">Omega</a></li>
-            <li><a href="../products.php?id=piaget">Piaget</a></li>
+            <li><a href="../products.php?id=rolex">Rolex</a></li>
           </ul>
         </li>
 
@@ -204,8 +203,6 @@ navbar-fixed-top {
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 
     <?php
-        session_start();
-
         if(empty($_SESSION['user_id'])){
           echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
           echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
@@ -213,19 +210,20 @@ navbar-fixed-top {
 
         else{
 
-          include '../connect/conn.php';
-
-          $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
+          include ('connect/conn.php');
+		  
+          $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = '".$_SESSION['user_id']."'");
           $row = mysqli_fetch_assoc($result);
+		  $name=$row['fname'];
 
-          echo "<li><a href='home.php'> ". $row['fname'] ."<span class = 'sr-only></span></a></li>";
+          echo "<li><a href='register/home.php'>".ucfirst($name)."<span class = 'sr-only></span></a></li>";
 
-          echo "<li><a href='/logout.php'><span class='sr-only'></span></a></li>"; 
+          echo "<li><a href='register/logout.php'><span class='sr-only'></span></a></li>"; 
 
-          echo "<li><a href='/register/logout.php'> Logout <span class='sr-only'></span></a></li>";
+          echo "<li><a href='register/logout.php'> Logout <span class='sr-only'></span></a></li>";
 
-        }
-      
+        
+		}
 
     ?>
 		
