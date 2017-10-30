@@ -39,7 +39,7 @@ include('connect/conn.php');
 							echo "<p class='price'>".$row['price']."</p></footer></td>";								
 						}else{
 							echo "<td>";
-							echo "<a data-toggle='modal' data-target='$b'>";
+							echo "<a data-toggle='modal' data-target='#modal1'>";
 							echo "<img src='".$row['location']."' class='images'></a><br>";	
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
