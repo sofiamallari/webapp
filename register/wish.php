@@ -4,13 +4,11 @@
     <title> Alpha Watches Customer </title>
 </head>
 <?php
-	session_start();
-    ob_start();
-
+	include("../register/heading.php");
     if(empty($_SESSION['user_id'])){
 		header('location: login.php');
 	}
-    include("../register/heading.php");
+    
 
     include '../connect/conn.php';
 
@@ -21,7 +19,7 @@
 	<body>
 		<div class="col-md-10 col-md-offset-1">
             <div class="col-md-offset-1">
-                <h2>Hi <?php echo $row['fname']; echo " ".$row['fname'] ?> </h2>
+                <h2>Hi <?php echo $row['fname'] ?> </h2>
             </div>
             <!-- TABLE FOR WISHLIST -->
             <div class="col-md-12">
@@ -38,9 +36,9 @@
                     </thead>
                     <tbody>
                         <?php
-                            $query = "SELECT * FROM products JOIN wishlist  ".
-	                            "where wishlist.product_id = products.prod_id and ".
-                                "wishlist.user_id = ".$_SESSION['user_id'];
+                            $query = "SELECT * FROM products JOIN wish ".
+	                            "where wish.prod_id = products.prod_id and ".
+                                "wish.user_id = '".$_SESSION['user_id']."'";
                             $result = mysqli_query($conn, $query);
 
                             while($row =(mysqli_fetch_assoc($result))) {
@@ -48,8 +46,8 @@
                                     echo "<td>".$row['brand']."</td>";
                                     echo "<td>".$row['description']."</td>";
                                     echo "<td>".$row['gender']."</td>";
-				                    echo "<td>".$row['price']."<td>";
-				                    echo "<td>".$row['location'];
+				                    echo "<td>".$row['price']."</td>";
+				                    echo "<td>".$row['location']."</td>";
 				                    #TODO("Add glyph icon?");
 				                    echo "<td>". "<form method = 'post' action = ''><button type='submit' name='del_item' value=' ". $row['prod_id'] .
                                         "'> DEL</button></form>";

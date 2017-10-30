@@ -111,5 +111,5 @@ if(isset($_GET['iddd'])){
 }
 
 echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
-}
+
 ?>

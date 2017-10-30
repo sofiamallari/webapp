@@ -35,7 +35,12 @@
 	
 		<div class = "container">
 			<div class = "row">
-
+			<div class = "panel-heading">
+							<h3> Wishlist </h3>
+						</div>
+				<a href="../register/wish.php">
+				<button type = "submit" class = "btn btn-primary" name = 'wist'>Modify Wishlist</button>				
+				</a>
 				<div class = "col-sm-12">
 					<div class = "panel">
 						<div class = "panel-heading">

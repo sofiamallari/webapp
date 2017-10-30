@@ -224,7 +224,7 @@ navbar-fixed-top {
           $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
           $row = mysqli_fetch_assoc($result);
 
-          echo "<li><a href='home.php'> ". $row['fname'] ."<span class = 'sr-only></span></a></li>";
+          echo "<li><a href='home.php'> ". ucfirst($row['fname']) ."<span class = 'sr-only></span></a></li>";
 
           echo "<li><a href='../register/logout.php'><span class='sr-only'></span></a></li>"; 
 

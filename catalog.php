@@ -12,23 +12,20 @@ $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."
 	<p class="price"><?php echo $row['price'];?></p>
 	<p class="price">Item Number:<?php echo $row['prod_id'];?></p>
 	<p class="price">Quantity:<?php echo $row['quantity'];?></p>
-	
+	<form method="post" action="catalog.php">
+	<input type = 'hidden' name ="prod" value="<?php echo $_GET['id']; ?>">
 	<input type="submit" name="wish" value="Wish">
 	<input type="submit" name="cart" value="Add to Cart">
-	
+	</form>
 <?php	
- global $a;
- $a=$row['prod_id'];
 }
-echo $a;
-echo $_SESSION['user_id'];
+$b=$_POST['prod'];
+$c=$_SESSION['user_id'];
 if(isset($_POST['wish'])){
-	$sql="Update wish set `user_id`='".$_SESSION['user_id']."',
-						  `prod_id`='".$a."'";
-	if(mysqli_query($conn,$sql)){							  
-	echo "added";
-	}else{
-		echo $conn->error;
-	}
+	$sql="Insert into wish(user_id,prod_id)
+			VALUES('$c','$b')";
+	mysqli_query($conn,$sql);				  
+	echo $conn->error;
+	
 }
 ?>
