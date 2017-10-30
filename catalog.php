@@ -17,26 +17,18 @@ $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."
 	<input type="submit" name="cart" value="Add to Cart">
 	
 <?php	
+ global $a;
+ $a=$row['prod_id'];
 }
-
+echo $a;
+echo $_SESSION['user_id'];
 if(isset($_POST['wish'])){
-	$sql="Update products set wishes='".$row['prod_id']."',
-							  user_id='".$_SESSION['user_id']."',
-							  prod_id='".$row['prod_id']."';
+	$sql="Update wish set `user_id`='".$_SESSION['user_id']."',
+						  `prod_id`='".$a."'";
+	if(mysqli_query($conn,$sql)){							  
+	echo "added";
+	}else{
+		echo $conn->error;
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
