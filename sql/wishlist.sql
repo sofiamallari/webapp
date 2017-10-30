@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `wish` (
-  `wishes` varchar(255) NOT NULL,
   `user_id` int(100) NOT NULL,
   `prod_id` int(100) NOT NULL,
   FOREIGN KEY (`user_id`) REFERENCES `reg`(`user_id`),
