@@ -9,7 +9,7 @@ if(empty($_SESSION['user_id'])){
 	header("location: ../register/login.php");
 }
 	ob_start();
-	include '../connect/conn.php';
+	include ('../connect/conn.php');
 	include('table.html');
 
 $query = "SELECT * FROM reg";

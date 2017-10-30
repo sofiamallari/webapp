@@ -1,7 +1,7 @@
 <html>
 	<head>
 			<?php 
-			include("../connect/header.php");
+			include("../register/heading.php");
 			?>
 			<link href="reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">

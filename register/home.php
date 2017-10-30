@@ -7,7 +7,7 @@
 </head>
 <?php
 	ob_start(); 
-	include("heading.php");
+	include("../register/heading.php");
 	if(empty($_SESSION['user_id']))
 		header("location: ../register/login.php");
 	else{

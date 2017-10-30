@@ -4,7 +4,7 @@
 <html>
 	<head>
 	<?php
-		include("../connect/header.php");
+		include("heading.php");
 	        require_once("../connect/conn.php");
 
 		if(!empty($_SESSION['logged_in'])){

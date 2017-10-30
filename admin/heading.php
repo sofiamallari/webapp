@@ -166,18 +166,18 @@ navbar-fixed-top {
 				Men
 				<span class="caret"></span>
 		  </a>
-          <ul class="dropdown-menu">
-            <li><a href="lange.html">A.Lange</a></li>
-            <li><a href="baume.html">Baume & Mercier</a></li>
-			<li><a href="breguet.html">Breguet</a></li>
-			<li><a href="chopard.html">Chopard</a></li>
-            <li><a href="elliot.html">Elliot</a></li>
-			<li><a href="#">Hugo</a></li>
-            <li><a href="mont.html">Montblanc</a></li>
-            <li><a href="#">Patek Philippe</a></li>
-			<li><a href="rado.html">Rado</a></li>
-            <li><a href="rolex.html">Rolex</a></li>
-			<li><a href="#">Tissot</a></li>
+        <ul class="dropdown-menu">
+            <li><a href="../products.php?id=alange">A.Lange</a></li>
+            <li><a href="../products.php?id=baume">Baume & Mercier</a></li>
+			<li><a href="../products.php?id=breguet">Breguet</a></li>
+			<li><a href="../products.php?id=chopard">Chopard</a></li>
+            <li><a href="products.php?id=elliot">Elliot</a></li>
+			<li><a href="products.php?id=hugo">Hugo</a></li>
+            <li><a href="products.php?id=montblanc">Montblanc</a></li>
+            <li><a href="products.php?id=patek">Patek Philippe</a></li>
+			<li><a href="products.php?id=rado">Rado</a></li>
+			<li><a href="products.php?id=tag">Tag Heuer</a></li>
+           
           </ul>
         </li>
 
@@ -188,17 +188,18 @@ navbar-fixed-top {
 				<span class="caret"></span>
 		  </a>
           <ul class="dropdown-menu">
-            <li><a href="audfemale.html">Audemars Piguet</a></li>
-			<li><a href="BaumeAndMercier.html">Baume & Mercier</a></li>
-            <li><a href="BregutWomen.html">Breguet</a></li>
-			<li><a href="BvlgariWomen.html">Bvlgari</a></li>
-			<li><a href="ChopardWomen.html">Chopard</a></li>
-            <li><a href="GraffWomen.html">Graff Diamonds</a></li>
-			<li><a href="GucciWomen.html">Gucci</a></li>
-            <li><a href="omega.html">Omega</a></li>
-            <li><a href="rolexwomen.html">Rolex</a></li>
+            <li><a href="products.php?id=audemars">Audemars Piguet</a></li>
+			<li><a href="products.php?id=bremont">Bremont</a></li>
+            <li><a href="products.php?id=breitling">Breitling</a></li>
+			<li><a href="products.php?id=bvlgari">Bvlgari</a></li>
+			<li><a href="products.php?id=cartier">Cartier</a></li>
+            <li><a href="products.php?id=graff">Graff Diamonds</a></li>
+			<li><a href="products.php?id=gucci">Gucci</a></li>
+            <li><a href="products.php?id=omega">Omega</a></li>
+            <li><a href="products.php?id=piaget">Piaget</a></li>
           </ul>
         </li>
+
 
 		<li><a href="#">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>

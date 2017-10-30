@@ -172,16 +172,16 @@ navbar-fixed-top {
 		  $sql=mysqli_query($conn,$query);
 		  ?>
           <ul class="dropdown-menu">
-            <li><a href="products.php?id=alange">A.Lange</a></li>
-            <li><a href="products.php?id=baume">Baume & Mercier</a></li>
-			<li><a href="products.php?id=breguet">Breguet</a></li>
-			<li><a href="products.php?id=chopard">Chopard</a></li>
-            <li><a href="products.php?id=elliot">Elliot</a></li>
-			<li><a href="products.php?id=hugo">Hugo</a></li>
-            <li><a href="products.php?id=montblanc">Montblanc</a></li>
-            <li><a href="products.php?id=patek">Patek Philippe</a></li>
-			<li><a href="products.php?id=rado">Rado</a></li>
-			<li><a href="products.php?id=tag">Tag Heuer</a></li>
+            <li><a href="../products.php?id=alange">A.Lange</a></li>
+            <li><a href="../products.php?id=baume">Baume & Mercier</a></li>
+			<li><a href="../products.php?id=breguet">Breguet</a></li>
+			<li><a href="../products.php?id=chopard">Chopard</a></li>
+            <li><a href="../products.php?id=elliot">Elliot</a></li>
+			<li><a href="../products.php?id=hugo">Hugo</a></li>
+            <li><a href="../products.php?id=montblanc">Montblanc</a></li>
+            <li><a href="../products.php?id=patek">Patek Philippe</a></li>
+			<li><a href="../products.php?id=rado">Rado</a></li>
+			<li><a href="../products.php?id=tag">Tag Heuer</a></li>
            
           </ul>
         </li>
@@ -193,15 +193,15 @@ navbar-fixed-top {
 				<span class="caret"></span>
 		  </a>
           <ul class="dropdown-menu">
-            <li><a href="products.php?id=audemars">Audemars Piguet</a></li>
-			<li><a href="products.php?id=bremont">Bremont</a></li>
-            <li><a href="products.php?id=breitling">Breitling</a></li>
-			<li><a href="products.php?id=bvlgari">Bvlgari</a></li>
-			<li><a href="products.php?id=cartier">Cartier</a></li>
-            <li><a href="products.php?id=graff">Graff Diamonds</a></li>
-			<li><a href="products.php?id=gucci">Gucci</a></li>
-            <li><a href="products.php?id=omega">Omega</a></li>
-            <li><a href="products.php?id=piaget">Piaget</a></li>
+            <li><a href="../products.php?id=audemars">Audemars Piguet</a></li>
+			<li><a href="../products.php?id=bremont">Bremont</a></li>
+            <li><a href="../products.php?id=breitling">Breitling</a></li>
+			<li><a href="../products.php?id=bvlgari">Bvlgari</a></li>
+			<li><a href="../products.php?id=cartier">Cartier</a></li>
+            <li><a href="../products.php?id=graff">Graff Diamonds</a></li>
+			<li><a href="../products.php?id=gucci">Gucci</a></li>
+            <li><a href="../products.php?id=omega">Omega</a></li>
+            <li><a href="../products.php?id=piaget">Piaget</a></li>
           </ul>
         </li>
 

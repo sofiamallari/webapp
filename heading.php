@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<?php ob_start(); ?>
 <html>
 <head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -9,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="../final/fonts.css" rel="stylesheet">
-<link href="../final/css/underline.css" type="text/css" rel="stylesheet">
-<link href="../final/footer.css" type="text/css" rel="stylesheet">
+<link href="fonts.css" rel="stylesheet">
+<link href="underline.css" type="text/css" rel="stylesheet">
+<link href="footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
@@ -152,7 +153,7 @@ navbar-fixed-top {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ><img src="../final/A.png" id="#logo" class="col-md-6 col-xs-5"></a>
+      <a class="navbar-brand" href="#" ><img src="A.png" id="#logo" class="col-md-6 col-xs-5"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -160,23 +161,23 @@ navbar-fixed-top {
       <ul class="nav navbar-nav navbar-center">
         <li><a href="../connect/index.php">Home<span class="sr-only">(current)</span></a></li>
 
-		  <li class="dropdown">
+        <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 				Men
 				<span class="caret"></span>
 		  </a>
 		  
-         <ul class="dropdown-menu">
+          <ul class="dropdown-menu">
             <li><a href="../products.php?id=alange">A.Lange</a></li>
             <li><a href="../products.php?id=baume">Baume & Mercier</a></li>
 			<li><a href="../products.php?id=breguet">Breguet</a></li>
 			<li><a href="../products.php?id=chopard">Chopard</a></li>
-            <li><a href="products.php?id=elliot">Elliot</a></li>
-			<li><a href="products.php?id=hugo">Hugo</a></li>
-            <li><a href="products.php?id=montblanc">Montblanc</a></li>
-            <li><a href="products.php?id=patek">Patek Philippe</a></li>
-			<li><a href="products.php?id=rado">Rado</a></li>
-			<li><a href="products.php?id=tag">Tag Heuer</a></li>
+            <li><a href="../products.php?id=elliot">Elliot</a></li>
+			<li><a href="../products.php?id=hugo">Hugo</a></li>
+            <li><a href="../products.php?id=montblanc">Montblanc</a></li>
+            <li><a href="../products.php?id=patek">Patek Philippe</a></li>
+			<li><a href="../products.php?id=rado">Rado</a></li>
+			<li><a href="../products.php?id=tag">Tag Heuer</a></li>
            
           </ul>
         </li>
@@ -188,24 +189,48 @@ navbar-fixed-top {
 				<span class="caret"></span>
 		  </a>
           <ul class="dropdown-menu">
-            <li><a href="products.php?id=audemars">Audemars Piguet</a></li>
-			<li><a href="products.php?id=bremont">Bremont</a></li>
-            <li><a href="products.php?id=breitling">Breitling</a></li>
-			<li><a href="products.php?id=bvlgari">Bvlgari</a></li>
-			<li><a href="products.php?id=cartier">Cartier</a></li>
-            <li><a href="products.php?id=graff">Graff Diamonds</a></li>
-			<li><a href="products.php?id=gucci">Gucci</a></li>
-            <li><a href="products.php?id=omega">Omega</a></li>
-            <li><a href="products.php?id=piaget">Piaget</a></li>
+            <li><a href="../products.php?id=audemars">Audemars Piguet</a></li>
+			<li><a href="../products.php?id=bremont">Bremont</a></li>
+            <li><a href="../products.php?id=breitling">Breitling</a></li>
+			<li><a href="../products.php?id=bvlgari">Bvlgari</a></li>
+			<li><a href="../products.php?id=cartier">Cartier</a></li>
+            <li><a href="../products.php?id=graff">Graff Diamonds</a></li>
+			<li><a href="../products.php?id=gucci">Gucci</a></li>
+            <li><a href="../products.php?id=omega">Omega</a></li>
+            <li><a href="../products.php?id=piaget">Piaget</a></li>
           </ul>
         </li>
 
 		<li><a href="#">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
+
+    <?php
+        session_start();
+
+        if(empty($_SESSION['user_id'])){
+          echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
+          echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
+        }
+
+        else{
+
+          include '../connect/conn.php';
+
+          $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
+          $row = mysqli_fetch_assoc($result);
+
+          echo "<li><a href='home.php'> ". $row['fname'] ."<span class = 'sr-only></span></a></li>";
+
+          echo "<li><a href='/logout.php'><span class='sr-only'></span></a></li>"; 
+
+          echo "<li><a href='/register/logout.php'> Logout <span class='sr-only'></span></a></li>";
+
+        }
+      
+
+    ?>
 		
-		<li><a href="../register/login.php">Login<span class="sr-only"></span></a></li>
-		<li><a href="../register/reg.php">Register<span class="sr-only"></span></a></li>
 
 
       <!--<form class="navbar-form pull-right">
