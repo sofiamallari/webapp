@@ -18,7 +18,25 @@ $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."
 	
 <?php	
 }
-if($_POST['wish']){
-	$sql="INSERT INTO reg "
+
+if(isset($_POST['wish'])){
+	$sql="Update products set wishes='".$row['prod_id']."',
+							  user_id='".$_SESSION['user_id']."',
+							  prod_id='".$row['prod_id']."';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
