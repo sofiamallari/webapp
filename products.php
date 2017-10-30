@@ -34,13 +34,15 @@ include('connect/conn.php');
 							echo "</tr><td>";
 							$a=$row['prod_id'];
 							$b="#modal$a";
-							echo "<a data-toggle='modal' data-target='$b'><img src='".$row['location']."'></a><br>";
+							echo "<a data-toggle='modal' data-target='$b'>";
+							echo "<img src='".$row['location']."' class='images'></a><br>";
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
 							echo "<p class='price'>".$row['price']."</p></footer></td>";								
 						}else{
 							echo "<td>";
-							echo "<a data-toggle='modal' data-target='$b'><img src='".$row['location']."'></a><br>";	
+							echo "<a data-toggle='modal' data-target='$b'>";
+							echo "<img src='".$row['location']."' class='images'></a><br>";	
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
 							echo "<p class='price'>".$row['price']."</p></footer></td>";	
@@ -59,23 +61,10 @@ include('connect/conn.php');
       	   <div class="col-md-6 white col-xs-12"><div class="product col-xs-12 service-image-left" style="height:18em">
              <img id="item-display" src="bauwo/a13.jpg" alt=""></img></div>
       	    </div>
-
-       <div class="col-md-4 col-xs-12">
-	   <?php
-		$query="Select * from products where brand='alange'";
-		$sql=mysqli_query($conn,$query);
-		$i=0;
-		while($row = (mysqli_fetch_assoc($sql))){
-			if($i%3==0){
-				echo "<div class='product-title' style='padding-top: 2em;'>".$row['brand']."</div>";
-				echo "<div class='product-desc'>".$row['description']."</div>";
-			}
-		}
-		
-		?>
-        
-       
-
+			<div class="col-md-4 col-xs-12">
+			<div class='product-title' style='padding-top: 2em;'><?php echo $row['brand']?></div>
+			<div class='product-desc'><?php echo $row['description'] ?></div>
+			
           <div class="product-rating">
             <i class="fa fa-star gold"></i>
             <i class="fa fa-star gold"></i>

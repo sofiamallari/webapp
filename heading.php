@@ -10,9 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="fonts.css" rel="stylesheet">
-<link href="underline.css" type="text/css" rel="stylesheet">
-<link href="footer.css" type="text/css" rel="stylesheet">
+<link href="products.css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
