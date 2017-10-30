@@ -187,10 +187,10 @@ navbar-fixed-top {
 		  </a>
           <ul class="dropdown-menu">
             <li><a href="../products.php?id=audemars">Audemars Piguet</a></li>
-			<li><a href="../products.php?id=bremont">Bremont</a></li>
-            <li><a href="../products.php?id=breitling">Breitling</a></li>
+		    <li><a href="../products.php?id=breitling">Breitling</a></li>
 			<li><a href="../products.php?id=bvlgari">Bvlgari</a></li>
 			<li><a href="../products.php?id=cartier">Cartier</a></li>
+			<li><a href="../products.php?id=chanel">Chanel</a></li>
             <li><a href="../products.php?id=graff">Graff Diamonds</a></li>
 			<li><a href="../products.php?id=gucci">Gucci</a></li>
             <li><a href="../products.php?id=omega">Omega</a></li>
@@ -211,18 +211,19 @@ navbar-fixed-top {
         else{
 
           include ('connect/conn.php');
-
-          $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
+		  
+          $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = '".$_SESSION['user_id']."'");
           $row = mysqli_fetch_assoc($result);
+		  $name=$row['fname'];
 
-          echo "<li><a href='home.php'> ". $row['fname'] ."<span class = 'sr-only></span></a></li>";
+          echo "<li><a href='register/home.php'>".ucfirst($name)."<span class = 'sr-only></span></a></li>";
 
-          echo "<li><a href='/logout.php'><span class='sr-only'></span></a></li>"; 
+          echo "<li><a href='register/logout.php'><span class='sr-only'></span></a></li>"; 
 
-          echo "<li><a href='/register/logout.php'> Logout <span class='sr-only'></span></a></li>";
+          echo "<li><a href='register/logout.php'> Logout <span class='sr-only'></span></a></li>";
 
-        }
-      
+        
+		}
 
     ?>
 		

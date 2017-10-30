@@ -6,12 +6,11 @@
 			<link href="https://fonts.googleapis.com/css?family=Manuale|Playfair+Display:400i" rel="stylesheet"> 
 </head>
 <?php
-	ob_start(); 
 	include("heading.php");
 	if(empty($_SESSION['user_id']))
 		header("location: ../register/login.php");
 	else{
-		include '../connect/conn.php';
+		include ('../connect/conn.php');
 
 		// user procedural connection
 		$result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");

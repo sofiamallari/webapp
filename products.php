@@ -1,6 +1,9 @@
 <?php
+session_start();
 include('heading.php');
 include('connect/conn.php');
+$sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id']."'");
+echo $_SESSION['user_id'];
 ?>
 		 <div class="container col-xs-12">
          <p id="nav2"><?php echo "Results"?></p>
@@ -21,6 +24,7 @@ include('connect/conn.php');
          <table class="panel-table col-lg-12">
            <tr>
 				<?php
+				
 				$query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'");
 				if (mysqli_num_rows($query) == 0) {
 						echo "No products found";
