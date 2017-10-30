@@ -153,7 +153,7 @@ navbar-fixed-top {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ><img src="A.png" id="#logo" class="col-md-6 col-xs-5"></a>
+      <a class="navbar-brand" href="http://localhost" ><img src="A.png" id="#logo" class="col-md-6 col-xs-5"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
