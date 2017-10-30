@@ -16,7 +16,7 @@ DEV: MALLARI <br/>
 
 
 ### QA iniated Final output proposal:
-
+```
 ./
      catalog.php
      index.php
@@ -42,3 +42,4 @@ DEV: MALLARI <br/>
           conn.php
           header.php
           
+```
