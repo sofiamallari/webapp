@@ -14,10 +14,10 @@
 			# if it is destroyed, then basically we have 2 logout functionalities
 
 			if($_SESSION['status'] == 1){
-			    header('locaiton: home.php');
+			    header('location: home.php');
 		        }
 		        else if($_SESSION['status'] == 2){
-    				header('locaiton: ../admin/admin.php');
+    				header('location: ../admin/admin.php');
 		        }
 		        else if($_SESSION['status'] == 0){
 				header('location: unactivated.php');
