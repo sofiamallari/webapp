@@ -10,7 +10,7 @@
     if(empty($_SESSION['user_id'])){
 		header('location: login.php');
 	}
-    include("../connect/header.php");
+    include("../register/heading.php");
 
     include '../connect/conn.php';
 

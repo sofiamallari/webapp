@@ -277,17 +277,16 @@
    border-top : 1px solid #eeebe6;
 
 }
-<<<<<<< HEAD
+
 .panel-table{
 	border: none !important;
 }
 .panel-table .body td{
 	background-color: #fff !important;
 	border: none !important;
-=======
+}
 .panel-table .body td{
 	background-color: #fff !important;
->>>>>>> 7658ae6d2e276ca4d9111efc100699a3524d4b7f
 }
 
 .panel-table {

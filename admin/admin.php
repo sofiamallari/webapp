@@ -1,16 +1,15 @@
 <?php 
 session_start();
-ob_start();
 /*if(isset($_SESSION['logged_in'])==0){
 	header('Location: ../admin/admin.php');
 }else{
 	header('Location: ../register/register.php');
 }*/
-if(empty($_SESSION['user_id']))
+if(empty($_SESSION['user_id'])){
 	header("location: ../register/login.php");
-else{
+}
 	ob_start();
-	include '../connect/conn.php';
+	include ('../connect/conn.php');
 	include('table.html');
 
 $query = "SELECT * FROM reg";

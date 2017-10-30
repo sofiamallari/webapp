@@ -9,10 +9,10 @@
 }
 .footer {
 	background: #EDEFF1;
-  height: 0;
+	height: 0;
 	padding-bottom: 30px;
 	position: relative;
-	width: 100%;
+	width: 50%;
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
 }
