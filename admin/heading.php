@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<?php ob_start(); ?>
+<?php session_start(); ?>
 <html>
 <head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -205,9 +205,30 @@ navbar-fixed-top {
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 		
-		<li><a href="../register/login.php">Login<span class="sr-only"></span></a></li>
-		<li><a href="../register/reg.php">Register<span class="sr-only"></span></a></li>
+		  <?php
+			if(empty($_SESSION['user_id'])){
+			  echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
+			  echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
+			}
 
+			else{
+
+			  include ('connect/conn.php');
+			  
+			  $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = '".$_SESSION['user_id']."'");
+			  $row = mysqli_fetch_assoc($result);
+			  $name=$row['fname'];
+
+			  echo "<li><a href='register/home.php'>".ucfirst($name)."<span class = 'sr-only></span></a></li>";
+
+			  echo "<li><a href='register/logout.php'><span class='sr-only'></span></a></li>"; 
+
+			  echo "<li><a href='register/logout.php'> Logout <span class='sr-only'></span></a></li>";
+
+			
+			}
+
+    ?>
 
       <!--<form class="navbar-form pull-right">
         <div class="form-group">

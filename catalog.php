@@ -18,7 +18,5 @@ $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."
 	
 <?php	
 }
-if($_POST['wish']){
-	$sql="INSERT INTO reg "
-}
+
 ?>
