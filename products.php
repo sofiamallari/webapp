@@ -1,6 +1,9 @@
 <?php
+session_start();
 include('heading.php');
 include('connect/conn.php');
+$sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id']."'");
+echo $_SESSION['user_id'];
 ?>
 		 <div class="container col-xs-12">
          <p id="nav2"><?php echo "Results"?></p>
@@ -21,6 +24,7 @@ include('connect/conn.php');
          <table class="panel-table col-lg-12">
            <tr>
 				<?php
+				
 				$query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'");
 				if (mysqli_num_rows($query) == 0) {
 						echo "No products found";
@@ -31,15 +35,17 @@ include('connect/conn.php');
 					echo "<tr>";
 					while($row = (mysqli_fetch_assoc($query))){
 						if($i%3 == 0){
-							echo "</tr><td>";
-							echo "<a data-toggle='modal' data-target='#modal1'>";
+							echo "</tr><td>";?>
+							<a href="../catalog.php?id=<?php echo $row['prod_id']?>">
+							<?php
 							echo "<img src='".$row['location']."' class='images'></a><br>";
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
 							echo "<p class='price'>".$row['price']."</p></footer></td>";								
 						}else{
-							echo "<td>";
-							echo "<a data-toggle='modal' data-target='#modal1'>";
+							echo "<td>";?>
+							<a href="../catalog.php?id=<?php echo $row['prod_id']?>">
+							<?php
 							echo "<img src='".$row['location']."' class='images'></a><br>";	
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
@@ -52,39 +58,4 @@ include('connect/conn.php');
 		   </tr>
 		</table>
 	</div>
-	
-	  <div>
-      <div class="pop-container-fluid modal fade col-xs-12" id="modal1" role="dialog">
-        <div class="modal-dialog whole"><div class="pop-content-wrapper "><div class="item-container "><div class="container ">
-      	   <div class="col-md-6 white col-xs-12"><div class="product col-xs-12 service-image-left" style="height:18em">
-             <img id="item-display" src="bauwo/a13.jpg" alt=""></img></div>
-      	    </div>
-			<div class="col-md-4 col-xs-12">
-			
-			<div class='product-title' style='padding-top: 2em;'><?php echo $row['brand']?></div>
-			<div class='product-desc'><?php echo $row['description'] ?></div>
-			
-          <div class="product-rating">
-            <i class="fa fa-star gold"></i>
-            <i class="fa fa-star gold"></i>
-            <i class="fa fa-star gold"></i>
-            <i class="fa fa-star gold"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-
-          <hr>
-      		<div class="product-price">$ 1849.0</div>
-          <div class="product-stock">In Stock</div>
-          <hr>
-
-          <div class="btn-group cart">
-            <button type="button" class="btn btn-success">Add to cart</button>
-          </div>
-          <br><br>
-
-          <div class="btn-group wishlist">
-            <button type="button" class="btn btn-danger">Add to wishlist</button>
-      		</div></div></div></div></div></div>
-        </div>
-      </div>
 </html>
