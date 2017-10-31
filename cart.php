@@ -5,7 +5,7 @@
 </head>
 <?php
 	session_start();
-	include("../register/heading.php");
+	include("heading.php");
     if(empty($_SESSION['user_id'])){
 		header('location: login.php');
 	}
@@ -32,14 +32,14 @@
 
                             while($row =(mysqli_fetch_assoc($result))) {
                                 echo "<tr>";
-                                    echo "<td>".$row['quantity']."</td>";
                                     echo "<td>".$row['description']."</td>";
-                                    echo "<td>".$row['price']."</td>";?>
-				                    <td><input type="text" value="<?php echo $row['quantity']?>" ></td>                   
-									<?php 
-				                    #TODO("Add glyph icon?");
-				                    echo "<td>". "<form method = 'post' action = ''><button type='submit' name='del_item' value=' ". $row['prod_id'] .
-                                        "'> DEL</button></form>";
+                                    echo "<td>".$row['price']."</td>";
+                                    echo "<td>".$row['quantity']."</td>";
+
+				                        #TODO("Add glyph icon?");
+				                    echo "<td>". "<form method = 'post' action = ''><input type='hidden' name='desc' value='".$row['description']."'>".
+                                        "<input type='hidden' value='". $row['quantity'] ."'>".
+                                        "<button type='submit' name='del_item' value=' ". $row['prod_id']. "'> DEL</button></form></td>";
                                 echo "</tr>";
                             }
                         ?>
@@ -47,12 +47,26 @@
                 </table>
             </div>
         </div>
+
+        <script src="js/notify.min.js">
+            <!-- DO NOT REMOVE ME -VLAD -->
+        </script>
 	</body>
 </html>
 
 <?php
 	if(isset($_POST['del_item'])){
-			
+			$item_id = $_POST['del_item'];
+
+			$query = "DELETE FROM ORDERS WHERE user_id = ". $_SESSION['user_id'] . " and prod_id = ".$item_id;
+
+			if(mysqli_query($conn , $query)){
+                echo "<script>".
+                    "$.notify('Item ".$_POST['desc']." is removed from your cart)";
+                    "</script>";
+            }else{
+				throw new Error("DATABASE NOT WORKING PROPERLY");
+            }
 	}
 
 ?>
