@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`order_id`),
   FOREIGN KEY (`user_id`) REFERENCES `reg`(`user_id`),
   FOREIGN KEY (`prod_id`) REFERENCES `products`(`prod_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 
 

@@ -7,7 +7,6 @@ session_unset();
 
 // destroy the session 
 session_destroy(); 
-exit();
 header ("location: ../connect/index.php");
 echo '<script type="text/javascript">location.href = "../connect/index.php"</script>';
 ?>

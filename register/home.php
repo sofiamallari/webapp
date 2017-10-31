@@ -41,6 +41,9 @@
 				<a href="../register/wish.php">
 				<button type = "submit" class = "btn btn-primary" name = 'wist'>Modify Wishlist</button>				
 				</a>
+				<a href="../register/cart.php">
+				<button type = "submit" class = "btn btn-primary" name = 'wist'>Modify Cart</button>				
+				</a>
 				<div class = "col-sm-12">
 					<div class = "panel">
 						<div class = "panel-heading">

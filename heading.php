@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <!DOCTYPE HTML>
 <html>
 <head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
@@ -203,6 +204,7 @@ navbar-fixed-top {
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 
     <?php
+		
         if(empty($_SESSION['user_id'])){
           echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
           echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
