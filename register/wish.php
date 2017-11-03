@@ -63,7 +63,9 @@
 
 <?php
 	if(isset($_POST['del_item'])){
-			
+	$a=$_POST['del_item'];
+	mysqli_query($conn,"delete from wish where prod_id = '$a'");
+				
 	}
 
 ?>

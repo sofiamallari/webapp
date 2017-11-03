@@ -16,6 +16,9 @@
     $row = mysqli_fetch_assoc($result);
 ?>
 	<body>
+		<form method="post" action="checkout.php">
+		<a href="checkout.php"><button type='submit' name='checkout' value=""> checkout</button></a>
+		</form>
 		<div class="col-md-10 col-md-offset-1">
             <div class="col-md-12">
                 <table class="table table-bordered">
@@ -45,24 +48,28 @@
 									<?php 
 				                    #TODO("Add glyph icon?");
 				                    echo "<td>". "<form method = 'post' action ='cart.php'><button type='submit' name='del_item' value=' ".$row['order_id']."'> DEL</button></form>";
-							   echo "</tr>";
+							    echo "</tr>";
 									   for($i=0; $i>=mysqli_num_rows($result); $i++){
 										 $total=0;
 										 $total=$total+$row['price'];
 										 echo $row['price'];
-									   }
-									   
+									   }   
+		
                             }
+							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM ORDERS, PRODUCTS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
+							$result = mysqli_query($conn,$sql);
+							while ($rew =  mysqli_fetch_assoc($result)){
+								echo "Total:".$rew['SUM(PRODUCTS.PRICE)'];
+							}
                         ?>
+						
                     </tbody>
                 </table>
 				<?php
-				$query=mysqli_query($conn,"SELECT SUM(price) from orders");
-				$row=mysqli_fetch_array($query);
-				foreach($row as $c){
-					echo $c;
+				if(isset($_POST['del_item'])){
+					$a=$_POST['del_item'];
+					mysqli_query($conn,"delete from orders where order_id = '$a'");
 				}
-				
 				?>
             </div>
         </div>
@@ -70,8 +77,6 @@
 </html>
 
 <?php
-	if(isset($_POST['del_item'])){
-			
-	}
+	
 
 ?>
