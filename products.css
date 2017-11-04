@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
 .panel-footer{
 	margin-left:20px;
 	margin-right:20px;
-	
 }
 .images{
-	background:black;
 	margin-top:50px;
 	margin-left:80px;
 	display: flex;
@@ -17,5 +16,12 @@
 .brand,.desc,.price{
 	text-transform:capitalize;
 	font-family: 'Raleway', sans-serif;
-	text-align:left;
+	text-align:center;
+}
+
+.catdesc{
+	
+}
+.catprice{
+	
 }

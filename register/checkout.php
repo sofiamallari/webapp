@@ -8,10 +8,12 @@ include("heading.php");
 		// user procedural connection
 		$result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
 		$row = mysqli_fetch_assoc($result);
-		echo "<h1>Checkout</h1>";
+		echo "<h1 class='checks'>Checkout</h1>";
 		
 		$sql = "SELECT SUM(PRODUCTS.PRICE) FROM ORDERS, PRODUCTS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
+		$r="SELECT * FROM ORDERS";
 		$result = mysqli_query($conn,$sql);
+		$rows= mysqli_query($conn,$r);
 	}
 ?>
 <div class = "container">
@@ -19,8 +21,7 @@ include("heading.php");
 
 				<div class = "col-sm-12">
 					<div class = "panel">
-					
-						<div class = "panel-heading col-sm-6">
+						<div class = "panel-heading col-sm-6 checktitle">
 							<h3> Checkout Information</h3>
 						</div>
 						
@@ -30,25 +31,24 @@ include("heading.php");
 									<tr>
 										<th>Total Bill:</th>
 										<?php while ($rew =  mysqli_fetch_assoc($result)){
-											echo "<td>".$rew['SUM(PRODUCTS.PRICE)']."</td>";
-
+											echo "<td>$".$rew['SUM(PRODUCTS.PRICE)']."</td>";
 										}?>
-										<th>Contact Number: </th>
-										<td><?php echo $row['contact'];?> </td>
 										<th>Street: </th>
-										<td><?php echo $row['street'];?> </td>
+										<td><?php echo ucfirst($row['street']);?> </td>
 									</tr>
 									<tr>
+										<th>Contact Number: </th>
+										<td><?php echo ucfirst($row['contact']);?> </td>
 										<th>Barangay: </th>
-										<td> <?php echo $row['barangay'];?></td>
-										<th>City: </th>
-										<td><?php echo $row['city'];?> </td>
+										<td> <?php echo ucfirst($row['barangay']);?></td>
+										
 									</tr>
 									<tr>
+										<th>City: </th>
+										<td><?php echo ucfirst($row['city']);?> </td>
 										<th>Zip: </th>
-										<td><?php echo $row['zip']; ?> </td>
-										<th>Landmark: </th>
-										<td><?php echo $row['landmark']; ?> </td>
+										<td><?php echo ucfirst($row['zip']); ?> </td>
+										
 									</tr>
 								</tbody>
 							</table>
@@ -62,10 +62,10 @@ include("heading.php");
 					
 				</div>
 
-				<div class = "col-sm-12">
+				<div class = "col-sm-6">
 					<div class = "panel">
 
-						<div class = "panel-heading">
+						<div class = "panel-heading checktitle">
 							<h3> Billing Information </h3>
 						</div>
 
@@ -74,53 +74,53 @@ include("heading.php");
 							<form class = 'form-horizontal' method = 'post' action = 'checkout.php'>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> Contact Information: </label>
+									<label class = "control-label col-sm-2 info"> Contact Information: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
+										<input type = "text" class = "form-control info" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> Street: </label>
+									<label class = "control-label col-sm-2 info"> Street: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "street" value = '<?php echo $row['street'] ?>'> <br>
+										<input type = "text" class = "form-control info" name = "street" value = '<?php echo $row['street'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> Barangay: </label>
+									<label class = "control-label col-sm-2 info"> Barangay: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "barangay" value = '<?php echo $row['barangay'] ?>'> <br>
+										<input type = "text" class = "form-control info" name = "barangay" value = '<?php echo $row['barangay'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> City: </label>
+									<label class = "control-label col-sm-2 info"> City: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "city" value = '<?php echo $row['city'] ?>'> <br>
+										<input type = "text" class = "form-control info" name = "city" value = '<?php echo $row['city'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> Zip: </label>
+									<label class = "control-label col-sm-2 info"> Zip: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "zip" minlength = "4" value = '<?php echo $row['zip'] ?>'> <br>
+										<input type = "text" class = " form-control info" name = "zip" minlength = "4" value = '<?php echo $row['zip'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2"> Landmark: </label>
+									<label class = "control-label col-sm-2 info"> Landmark: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control" name = "landmark" value = '<?php echo $row['landmark'] ?>'> <br>
+										<input type = "text" class = "form-control info" name = "landmark" value = '<?php echo $row['landmark'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "col-sm-2">
-									<button type = "submit" class = "btn btn-primary" name = 'update'> Update </button>
+									<button type = "submit" class = "checkupdate" name = 'update'> Update </button>
 								</div>
 								
 								<div class = "col-sm-2">
-									<button type = "submit" class = "btn btn-primary" name = 'continue'> Continue </button>
+									<button type = "submit" class = "continue" name = 'continue'> Continue </button>
 								</div>
 						
 								<div class = "col-sm-6">

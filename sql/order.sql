@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_id` int(100) NOT NULL AUTO_INCREMENT,
   `user_id` int(100) NOT NULL,
   `prod_id` int(100) NOT NULL,
+   quantity int(100)NOT NULL,
   PRIMARY KEY (`order_id`),
   FOREIGN KEY (`user_id`) REFERENCES `reg`(`user_id`),
   FOREIGN KEY (`prod_id`) REFERENCES `products`(`prod_id`)

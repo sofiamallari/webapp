@@ -10,12 +10,88 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="fonts.css" rel="stylesheet">
-<link href="underline.css" type="text/css" rel="stylesheet">
 <link href="footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
+.info{
+  font-family: 'Playfair Display', serif;
+}
+.checkupdate{
+  color: white;
+  margin-left:20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #000000;
+  border: 0;
+  border-bottom: 2px solid #000000;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #000000;
+  box-shadow: inset 0 -2px #000000;
+  font-family: 'Playfair Display', serif;
+  font-size:30px;
+  padding-left:45px;
+  padding-right:45px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.continue{
+  color: white;
+  margin-left:150px;
+  background: #9e8400;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size:30px;
+  padding-left:45px;
+  padding-right:45px;
+  padding-top:6px;
+  padding-bottom:6px;
+}
+.checks{
+	margin-left:120px;
+	font-family:'Playfair Display', serif;
+	font-weight:bold;
+}
+.checktitle{
+	font-size:40px;
+	font-family:'Playfair Display', serif;
+	font-weight:bold;
+}
+.wishes{
+	margin-left:150px;
+	font-size:40px;
+	font-family:'Playfair Display', serif;
+	font-weight:bold;
+}
+.total{
+	text-align:right;
+	font-size:40px;
+	font-family:'Playfair Display', serif;
+	font-weight:bold;
+}
+.checkout{
+  color: white;
+  float:right;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #000000;
+  border: 0;
+  border-bottom: 2px solid #000000;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #000000;
+  box-shadow: inset 0 -2px #000000;
+  font-family: 'Playfair Display', serif;
+  font-size:30px;
+  padding-left:45px;
+  padding-right:45px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+td,th{
+	font-family:'Playfair Display', serif;
+}
+.pads{
+	margin-right:50px;
+}
 .middle {
   transition: .5s ease;
   position: absolute;
@@ -34,7 +110,7 @@
   z-index: -1;
 }
 .middle-text {
- color: black;
+  color: black;
   font-size: 1em;
   font-family: 'Oswald', sans-serif;
 }

@@ -10,10 +10,88 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Slabo+27px" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+
 <link href="products.css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
+.wis{
+  background-color: #998100;
+  border: none;
+  font-family: 'Playfair Display', serif;
+  font-size:30px;
+  color:white;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:5px;
+  padding-bottom:8px;
+}
+.car{
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #000000;
+  border: 0;
+  border-bottom: 2px solid #000000;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #000000;
+  box-shadow: inset 0 -2px #000000;
+  font-family: 'Playfair Display', serif;
+  font-size:30px;
+  padding-left:45px;
+  padding-right:45px;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.cart:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.catalogs{
+	margin-left:200px;
+}
+.catprice, .off{
+	display: inline-block;
+}
+.catbrand{
+  font-size:40px;
+  text-transform:capitalize;
+  font-family: 'Playfair Display', serif;
+}
+.catdesc{
+  font-family: 'Crimson Text', serif;
+  font-size:30px;
+  text-transform:capitalize;
+  color:#998100;<!--#9c0c0c;-->
+}
+.catprice{
+	font-family: 'Cormorant', serif;
+	font-size:50px;
+	font-family: 'Merriweather', serif;
+}
+.catprod{
+	font-size:20px;
+	font-family: 'Merriweather', serif;
+}
+.off{
+	font-size:20px;
+	color:#998100;
+	font-family: 'Merriweather', serif;
+}
+
+.brand , .desc ,.price{
+	text-align:center;
+}
+.total{
+	font-size:20px;
+}
 .middle {
   transition: .5s ease;
   position: absolute;
@@ -98,12 +176,6 @@ navbar-fixed-top {
 	font-family: 'Playfair Display', serif;
 	font-size:15pt;
 }
-#brand{
-	text-align:center;
-	font-family: 'Playfair Display', serif;
-	font-size:12pt;
-}
-
 .cert{
 	height:500px;
 	width:100%;
@@ -124,11 +196,6 @@ navbar-fixed-top {
 	color:#eaeaea;
 	font-size:15px;
 }
-
-.brand , .desc ,.price{
-	text-align:center;
-}
-
 @media (min-width: 768px) {
     .container, .panel-table,  {
         max-height: 100px;
@@ -228,9 +295,7 @@ navbar-fixed-top {
 		}
 
     ?>
-		
-
-
+	
       <!--<form class="navbar-form pull-right">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
@@ -248,3 +313,40 @@ navbar-fixed-top {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" onclick="alert('clicked')">
+    <div class="item active">
+      <img src="images\bg\bg1.jpg" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item">
+      <img src="images\bg\bg2.jpg" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    <div class="item">
+      <img src="images\bg\bg3.jpg" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div> <!-- Carousel -->
+
+<div style="height:50px;">
+</div>

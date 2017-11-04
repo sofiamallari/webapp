@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title> Alpha Watches Customer </title>
+	<link href="register/cart.css" style="stylesheet">
 </head>
 <?php
 	include("../register/heading.php");
@@ -16,9 +17,6 @@
     $row = mysqli_fetch_assoc($result);
 ?>
 	<body>
-		<form method="post" action="checkout.php">
-		<a href="checkout.php"><button type='submit' name='checkout' value=""> checkout</button></a>
-		</form>
 		<div class="col-md-10 col-md-offset-1">
             <div class="col-md-12">
                 <table class="table table-bordered">
@@ -39,44 +37,44 @@
                             $result = mysqli_query($conn, $query);
 
                             while($row =(mysqli_fetch_assoc($result))) {
-                                echo "<tr>";?>
-                                    <td><img src="<?php echo $row['location'];?>" class="col-xs-4"></td>
-                                   <?php
+                                echo "<tr>";
+                                    echo "<td><img src=".$row['location']." class='col-xs-4'></td>";
  								    echo "<td>".$row['description']."</td>";
-                                    echo "<td>".$row['price']."</td>";?>
-				                    <td><input type="text" value="<?php echo "1" ?>"></td>
-									<?php 
-				                    #TODO("Add glyph icon?");
-				                    echo "<td>". "<form method = 'post' action ='cart.php'><button type='submit' name='del_item' value=' ".$row['order_id']."'> DEL</button></form>";
+                                    echo "<td>$".$row['price']."</td>";
+				                    echo "<td><form method='post' action='cart.php'><input type='text' value='1' name='quantity'></td>";
+				                    echo "<input type='hidden' value='".$row['order_id']."' name='orders'>";
+				                    echo "<td><button type='submit' name='del_item' value='".$row['order_id']."'>Remove</button>";
 							    echo "</tr>";
-									   for($i=0; $i>=mysqli_num_rows($result); $i++){
-										 $total=0;
-										 $total=$total+$row['price'];
-										 echo $row['price'];
-									   }   
-		
                             }
 							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM ORDERS, PRODUCTS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
 							$result = mysqli_query($conn,$sql);
 							while ($rew =  mysqli_fetch_assoc($result)){
-								echo "Total:".$rew['SUM(PRODUCTS.PRICE)'];
-							}
+								echo "<p class='total'>Cart Total: $".$rew['SUM(PRODUCTS.PRICE)']."</p>";
+							}								
                         ?>
-						
                     </tbody>
                 </table>
-				<?php
-				if(isset($_POST['del_item'])){
-					$a=$_POST['del_item'];
-					mysqli_query($conn,"delete from orders where order_id = '$a'");
-				}
-				?>
+						<button type='submit' name='checkout' class="checkout">Checkout</button>
+						
+						</form>
+						<?php
+							if(isset($_POST['del_item'])){
+									$a=$_POST['del_item'];
+									mysqli_query($conn,"delete from orders where order_id = '$a'");
+							}
+							if(isset($_POST['checkout'])){
+									$q=$_POST['quantity'];
+									$r=$_POST['orders'];
+									mysqli_query($conn,"update orders set`quantity`='$q' where order_id='$r'");
+									echo $conn->error;
+									header("location:checkout.php");
+									
+							}
+						?>
+						
             </div>
         </div>
 	</body>
 </html>
 
-<?php
-	
 
-?>

@@ -3,18 +3,27 @@ session_start();
 include('heading.php');
 include('connect/conn.php');
 $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id']."'");
-echo $_SESSION['user_id'];
 ?>
 		 <div class="container col-xs-12">
-         <p id="nav2"><?php echo "Results"?></p>
          <form>
            <label class="cc"> Price Range:</label>
            <select class="cc">
-             <option/>
-             <option/>50,000-30,000
-             <option/>30,000-20,000
-             <option/>20,000-10,000
-             <option/>10,000-1,000
+			 <option/>
+             <option value="50">50,000-30,000
+             <option value="30">30,000-20,000
+             <option value="20">20,000-10,000
+             <option value="10">10,000-1,000
+           </select>
+		   
+		   <label class="cc"> Color:</label>
+           <select class="cc">
+			 <option/>
+             <option value="gold">Gold
+             <option value="rose">Rose
+             <option value="white">White
+             <option value="black">Black
+             <option value="silver">Silver
+             <option value="brown">Brown
            </select>
          </form>
          <hr class="hr-page">
@@ -24,7 +33,6 @@ echo $_SESSION['user_id'];
          <table class="panel-table col-lg-12">
            <tr>
 				<?php
-				
 				$query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'");
 				if (mysqli_num_rows($query) == 0) {
 						echo "No products found";
