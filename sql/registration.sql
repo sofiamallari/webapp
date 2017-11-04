@@ -49,7 +49,7 @@ CREATE TABLE `reg` (
 
 INSERT INTO `reg` (`user_id`, `email`, `password`, `fname`, `lname`, `mname`, `gender`, `Status`, `contact`, `street`, `barangay`, `city`, `zip`, `landmark`) VALUES
 (1998, 'admin@alpha.com', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'admin', 'male', '2', 0, '', '', '', '', ''),
-(1, 'sbmallari@fit.edu.ph', 'a15055878248b9ef6715ae03f38d8a28', 'charlliz', 'charlliz', 'charlliz', 'female', '0', 1, '', '', '', '', ''),
+(1, 'sbmallari@fit.edu.ph', 'a15055878248b9ef6715ae03f38d8a28', 'charlliz', 'charlliz', 'charlliz', 'female', '1', 1, '', '', '', '', ''),
 (2, 'middle@gmail.com', 'd14b4e69d5445c297868eef57700deb0', 'JUAN', 'DELA CRUZ', 'Generic', 'Male', '0', 1, 'R.PAPA', 'Pugad Lawin', 'Manila', '1800', 'Sigaw ng bayan');
 
 -- --------------------------------------------------------
