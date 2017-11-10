@@ -27,8 +27,7 @@
                             <th>Brand</th>
                             <th>Description</th>
                             <th>Price</th>
-			                <th>Quantity</th>
-			                <th>Remove Item </th>
+			                <th>Actions </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,9 +42,10 @@
                                    <?php
  								    echo "<td class='pads'>".$row['description']."</td>";
                                     echo "<td class='pads'>$".$row['price']."</td>";?>
-				                    <td class="pads"><input type="text" value="<?php echo "1" ?>"></td>
-									<?php
-				                    echo "<td>". "<form method = 'post' action ='wish.php'><button type='submit' name='del_item' value=' ".$row['prod_id']."'> DEL</button></form>";
+				                    <?php
+				                    echo "<td>". "<form method = 'post' action ='wish.php'><button type='submit' name='del_item' value=' ".$row['prod_id']."'> DEL</button></form></td>";
+									# IMPLEMENT SPRINT 4
+				                    //echo "<form method = 'post' action ='wish.php'><button type='submit' name='add' value=' ".$row['qu']."'> DEL</button></form></td>";
 							    echo "</tr>";
                             }								
                         ?>

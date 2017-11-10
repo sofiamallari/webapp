@@ -14,5 +14,21 @@ if(isset($_POST['Insert'])){
 							VALUES('$idd','$email', '$password', '$fname', '$lname', '$mname', '$gender','$Status')";
 	mysqli_query($conn,$query);
 }
-header("location:../admin/admin.php");
+
+else if(isset($_POST['productInsert'])){
+				$prod_id     = $_POST['prod_id'];
+				$brand       = $_POST['brand'];
+				$price       = $_POST['price'];
+				$quantity    = $_POST['quantity'];
+				$description = $_POST['description'];
+				$color       = $_POST['color'];
+				$gender      = $_POST['gender'];
+				//$location    = $_POST['location'];
+				
+	$query = "INSERT INTO products(prod_id, brand, price, quantity, description, color, gender)
+						    VALUES($prod_id,'".$brand."','".$price."','".$quantity."','".$description."','".$color."','".$gender."')";
+							
+	mysqli_query($conn, $query);
+}
+	header("location:../admin/admin.php");
 ?>

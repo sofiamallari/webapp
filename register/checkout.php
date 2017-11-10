@@ -120,9 +120,9 @@ include("heading.php");
 								</div>
 								
 								<div class = "col-sm-2">
-									<button type = "submit" class = "continue" name = 'continue'> Continue </button>
+									<a href="../payment.php"><button type = "submit" class = "continue" name = 'continue'> Continue </button></a>
 								</div>
-						
+								
 								<div class = "col-sm-6">
 									<input type = "hidden" class = "form-control" name = "Status" value = "0">
 								</div>

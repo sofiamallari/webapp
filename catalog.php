@@ -24,18 +24,29 @@ echo "</div>";
 if(isset($_POST['wish'])){
 	$b=$_POST['prod_id'];
 	$c=$_SESSION['user_id'];
+	
+	
 	$sql="Insert into wish(user_id,prod_id)
 			VALUES('$c','$b')";
 	mysqli_query($conn,$sql);
 	echo $conn->error;	
-	header("location:../connect/index.php");
+	header("location:../register/wish.php");
 }
 if(isset($_POST['cart'])){
 	$b=$_POST['prod_id'];
 	$c=$_SESSION['user_id'];
-	$sql="Insert into orders(user_id,prod_id)
-			VALUES('$c','$b')";
+	
+	$query = "SELECT * FROM ORDERS WHERE USER_ID = ". $c ." AND PROD_ID = ".$b;
+	$res = mysqli_fetch_assoc(mysqli_query( $conn , $query));
+	echo $conn->error;
+	if($res){
+			$sql = "UPDATE ORDERS SET QUANTITY = QUANTITY + 1 WHERE USER_ID = ".$c ." AND PROD_ID = ".$b;
+			mysqli_query($conn,$sql);
+	}else{
+	$sql="Insert into orders(user_id,prod_id,quantity)
+			VALUES('$c','$b',1)";
 	mysqli_query($conn,$sql);
+	}
 	echo $conn->error;	
 	header("location:../register/cart.php");
 }

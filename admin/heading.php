@@ -1,5 +1,5 @@
+<?php ob_start();?>
 <!DOCTYPE HTML>
-<?php session_start(); ?>
 <html>
 <head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="fonts.css" rel="stylesheet">
-<link href="underline.css" type="text/css" rel="stylesheet">
-<link href="footer.css" type="text/css" rel="stylesheet">
+<link href="../final/fonts.css" rel="stylesheet">
+<link href="../final/underline.css" type="text/css" rel="stylesheet">
+<link href="../final/footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>

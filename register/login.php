@@ -4,9 +4,9 @@
 <html>
 	<head>
 	<?php
-		include("../connect/header.php");
+		include("../admin/heading.php");
 		ob_start();
-	        require_once("../connect/conn.php");
+	    require_once("../connect/conn.php");
 
 		if(!empty($_SESSION['logged_in'])){
 			# Edit by Vlad

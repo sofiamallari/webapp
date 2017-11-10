@@ -1,8 +1,10 @@
+<?php ob_start();?>
 <!DOCTYPE HTML>
 <html>
-<head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<head><meta charset="utf-8">
+<script src="jquery-3.2.1.min.js"></script>
+<link href="bootstrap/css/bootstrap" rel="stylesheet" />
+<script src="bootstrap/js/boostrap.js"></script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">

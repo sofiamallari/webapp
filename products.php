@@ -3,6 +3,7 @@ session_start();
 include('heading.php');
 include('connect/conn.php');
 $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id']."'");
+
 ?>
 		 <div class="container col-xs-12">
          <form>

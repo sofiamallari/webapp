@@ -14,5 +14,5 @@ if($_SESSION['status'] == 2){
 }
 else{
 	#TODO(' MAYBE THIS IS CATALOG? ');
-	header('location: final/index.php');
+	header('location: connect/index.php');
 }
