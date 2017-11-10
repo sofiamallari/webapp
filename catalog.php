@@ -29,8 +29,13 @@ if(isset($_POST['wish'])){
 	$sql="Insert into wish(user_id,prod_id)
 			VALUES('$c','$b')";
 	mysqli_query($conn,$sql);
+
 	echo $conn->error;	
 	header("location:../register/wish.php");
+
+	echo $conn->error;
+	header("location:../connect/index.php");
+
 }
 if(isset($_POST['cart'])){
 	$b=$_POST['prod_id'];
@@ -46,8 +51,9 @@ if(isset($_POST['cart'])){
 	$sql="Insert into orders(user_id,prod_id,quantity)
 			VALUES('$c','$b',1)";
 	mysqli_query($conn,$sql);
-	}
-	echo $conn->error;	
+
+	echo $conn->error;
 	header("location:../register/cart.php");
 }
-?> 
+}
+?>

@@ -121,7 +121,7 @@ include('heading.php');
             <div class="table-responsive">
 				<table>
 						<?php
-						   include('../connect/conn.php');
+						   include('connect/conn.php');
 						    $q="SELECT * FROM reg where user_id = '".$_SESSION['user_id']."'";
 							$res=mysqli_query($conn,$q);
 							$row = mysqli_fetch_assoc($res);

@@ -271,7 +271,7 @@ navbar-fixed-top {
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 
     <?php
-		
+		session_start();
         if(empty($_SESSION['user_id'])){
           echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
           echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
