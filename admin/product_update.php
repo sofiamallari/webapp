@@ -1,13 +1,9 @@
 <?php
 	include('heading.php');
 	include('../connect/conn.php');
-	$sql    = "select COUNT(prod_id) from products";
-	$query  = mysqli_query($conn, $sql);
-	
-	if($query){
-		$row    = mysqli_fetch_array($query);
-		$result = $row['COUNT(prod_id)'] + 4;
-	}
+	$query   = mysqli_query($conn, "SELECT * FROM products WHERE prod_id= '".$_GET['idd']."'");
+	$q = "SELECT * FROM reg";
+	$row = mysqli_fetch_assoc($query)
 ?>
 
 <head>
@@ -21,11 +17,11 @@
 	</style>
 </head>
 
-<h1> Insert new product </h1>
+<h1> Update Product</h1>
 
-<form method = 'POST' action = 'insert.php' enctype = 'multipart/form-data'>
+<form method = 'POST' action = 'update.php' enctype = 'multipart/form-data'>
 	<div class = 'form-group col-md-4 forms'>
-		<input type = 'hidden' name = 'prod_id' value = <?php echo (int) $result ?> class = 'form-control'>
+		<input type = 'hidden' name = 'prod_id' value = <?php echo (int) $_GET['idd'] ?> class = 'form-control'>
 
 		<label for = 'brand_select'>Select brand: </label>
 		<select class = 'form-control' id = 'brand_select' name = 'brand'>
@@ -79,10 +75,10 @@
 		<input type = 'radio' name = 'gender' id = 'category' value = 'female'> Female </input> <br> <br>
 		
 		
-		<label for = 'fileToUpload'> Insert image: </label>
+		<label for = 'fileToUpload'> Update image: </label>
 		<input type = 'file' name = 'fileToUpload' id = 'fileToUpload'> <br>
 		
-		<input type = 'submit' size = '20' name = 'productInsert' value = 'Insert'>
+		<input type = 'submit' size = '20' name = 'productUpdate' value = 'Update'>
 		<a href = 'admin.php'> Back </a>
 		
 		

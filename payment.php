@@ -24,12 +24,12 @@ include('heading.php');
 	<div class="container-fluid">
         <div class="creditCardForm">
             <div class="heading">
-                <h1>Credit/Debit Card Payment</h1>
+                <h1 class="h1">Credit/Debit Card Payment</h1>
             </div>
             <div class="payment">
                 <form method='post'action='payment.php'>
                     <div class="form-group owner">
-                        <label for="owner">Owner</label>
+                        <label for="owner">Card Owner</label>
                         <input type="text" class="form-control" id="owner">
                     </div>
                     <div class="form-group CVV">
@@ -71,7 +71,7 @@ include('heading.php');
                         <img src="card/assets/images/amex.jpg" id="amex">
                     </div>
                     <div class="form-group" id="pay-now">
-                        <button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button>
+                        <a href="receipt.php"><button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button></a>
                     </div>
                 </form>
             </div>
@@ -110,16 +110,14 @@ include('heading.php');
             </div>
         </div>
     </div>
-				
-				
-				</div>
+</div>
 				
 				
 				
 			<div class="tab-pane" id="2a">
-			<div class="examples">
-            <div class="table-responsive">
-				<table>
+            <div class="a">
+			<table>
+					<tr><td id="info">Personal Information</td></tr>
 						<?php
 						   include('connect/conn.php');
 						    $q="SELECT * FROM reg where user_id = '".$_SESSION['user_id']."'";
@@ -127,40 +125,51 @@ include('heading.php');
 							$row = mysqli_fetch_assoc($res);
 								echo "<tr><td>Full Name: ".ucfirst($row['fname'])." ".ucfirst($row['lname'])."</td></tr>";
 								echo "<tr><td>Address:".ucfirst($row['street'])." ".ucfirst($row['barangay'])." ".ucfirst($row['city'])."</td></tr>";	
-						   ?>
-				</table>
+								echo "<tr><td>Contact Number:".ucfirst($row['contact'])."</td></tr>";	
+							
+							$que="SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
+							$sql="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$a=mysqli_query($conn,$que);
+							$result=mysqli_query($conn,$sql);
+							while (($rew =  mysqli_fetch_assoc($a)) && ($r = mysqli_fetch_assoc($result))){
+								$s= $rew['SUM(PRODUCTS.PRICE)'] * $r['quantity'];
+								echo "<tr><td id='total'>Cart Total: $".$s."</td></tr>";
+								
+							}	
+						?>
+			</table>
+					<div class="form-group" id="pay-now">
+                        <a href="receipt.php"><button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button></a>
+                    </div>
+			</div>
+			<div class="b">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Items Ordered</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                            <th colspan='1'>Items Ordered</th>
+                            <th class='col-md-2' colspan='2'>Quantity</th>
+                            <th class='col-md-2' colspan='2'>Price</th>
                         </tr>
                     </thead>
                     <tbody>	
 						<?php
-						$query = "SELECT * FROM products JOIN orders ".
+							$query = "SELECT * FROM products JOIN orders ".
 	                            "where orders.prod_id = products.prod_id and orders.user_id = '".$_SESSION['user_id']."'";
                             $res=mysqli_query($conn,$query);
 							while($row = mysqli_fetch_assoc($res)){
 								echo "<tr>";
-								echo "<td><img class='col-md-4' src='".$row['location']." '/></td>";
-								echo "<td>".$row['quantity']."</td>";
-								echo "<td>".$row['price']."</td>";
+								echo "<td colspan=1><img class='col-md-4' src='".$row['location']." '/></td>";
+								echo "<td class='col-md-2' colspan=2>".$row['quantity']."</td>";
+								echo "<td class='col-md-2' colspan=2>".$row['price']."</td>";
 								echo "</tr>";
-							}?>
+							}
+						
+						?>
                     </tbody>
                 </table>
-					<div class="form-group" id="pay-now">
-                        <button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button>
-                    </div>
+				 
 			</div>
         </div>
-    </div>
-				
-				
-			
-         	</div>
-  </div>
+
    <script src="card/assets/js/jquery.payform.min.js" charset="utf-8"></script>
     <script src="card/assets/js/script.js"></script>

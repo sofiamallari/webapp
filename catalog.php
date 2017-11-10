@@ -25,17 +25,12 @@ if(isset($_POST['wish'])){
 	$b=$_POST['prod_id'];
 	$c=$_SESSION['user_id'];
 	
-	
 	$sql="Insert into wish(user_id,prod_id)
 			VALUES('$c','$b')";
 	mysqli_query($conn,$sql);
 
 	echo $conn->error;	
-	header("location:../register/wish.php");
-
-	echo $conn->error;
-	header("location:../connect/index.php");
-
+	//header("location:../register/wish.php");
 }
 if(isset($_POST['cart'])){
 	$b=$_POST['prod_id'];

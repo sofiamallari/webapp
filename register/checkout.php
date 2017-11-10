@@ -120,7 +120,7 @@ include("heading.php");
 								</div>
 								
 								<div class = "col-sm-2">
-									<a href="../payment.php"><button type = "submit" class = "continue" name = 'continue'> Continue </button></a>
+									<button type = "submit" class = "continue" name = 'continue'> Continue </button>
 								</div>
 								
 								<div class = "col-sm-6">
@@ -171,7 +171,7 @@ include("heading.php");
 				}
 			}
 			if(isset($_POST['continue'])){
-				header("location: register/payment.php");
+				header("location: ../payment.php");
 			}
 		
 		?>

@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `wish` (
   `user_id` int(100) NOT NULL,
   `prod_id` int(100) NOT NULL,
+  
   FOREIGN KEY (`user_id`) REFERENCES `reg`(`user_id`),
   FOREIGN KEY (`prod_id`) REFERENCES `products`(`prod_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;

@@ -1,7 +1,9 @@
 <?php
-session_start();
 include('heading.php');
 include('connect/conn.php');
+if($_SESSION['user_id']==null){
+	header("location:register/login.php");
+}else{
 $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id']."'");
 
 ?>
@@ -63,6 +65,7 @@ $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id'
 						$i++;	
 					}
 				};
+}
 				?>
 		   </tr>
 		</table>

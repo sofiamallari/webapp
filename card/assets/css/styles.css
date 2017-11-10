@@ -10,11 +10,12 @@
 .creditCardForm label {
     width: 100%;
     margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm .heading h1 {
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Playfair Display', serif;
     color: #4c4e56;
 }
 
@@ -24,40 +25,49 @@
     padding: 10px 25px;
     margin-top: 20px;
     position: relative;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm .payment .form-group {
     float: left;
     margin-bottom: 15px;
+	font-family: 'Playfair Display', serif;
+	
 }
 
 .creditCardForm .payment .form-control {
     line-height: 40px;
     height: auto;
     padding: 0 16px;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm .owner {
     width: 63%;
     margin-right: 10px;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm .CVV {
     width: 35%;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm #card-number-field {
     width: 100%;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm #expiration-date {
     width: 49%;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm #credit_cards {
     width: 50%;
     margin-top: 25px;
     text-align: right;
+	font-family: 'Playfair Display', serif;
 }
 
 .creditCardForm #pay-now {
@@ -69,10 +79,8 @@
     width: 100%;
     margin-top: 3px;
     font-size: 24px;
-    background-color: #2ec4a5;
     color: white;
 }
-
 .creditCardForm .payment select {
     padding: 10px;
     margin-right: 15px;
@@ -81,13 +89,23 @@
 .transparent {
     opacity: 0.2;
 }
-
+.btn-default{
+	background:#998100;
+}
+.btn {
+    width: 100%;
+    margin-top: 3px;
+    font-size: 24px;
+    color: white;
+	font-family: 'Playfair Display', serif;
+}
 @media(max-width: 650px) {
     .creditCardForm .owner,
     .creditCardForm .CVV,
     .creditCardForm #expiration-date,
     .creditCardForm #credit_cards {
         width: 100%;
+		font-family: 'Playfair Display', serif;
     }
     .creditCardForm #credit_cards {
         text-align: left;
@@ -103,6 +121,7 @@
 	margin: 0 auto 75px;
 	padding: 30px 50px;
 	color: #4c4e56;
+	float:left;
 }
 
 .examples-note{
@@ -118,3 +137,46 @@
     margin: 5px 0 0 0;
     font-size: 14px;
 }
+.a{
+	max-width: 700px;
+	background-color: #fff;
+	padding: 100px 50px;
+	color: #4c4e56;
+	float:left;
+}
+.a td{
+	font-family: 'Playfair Display', serif;
+	font-size:20px;
+	word-spacing:1px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.b{
+	max-width: 700px;
+	background-color: #fff;
+	margin: 0 auto 100px;
+	padding: 100px 100px;
+	color: #4c4e56;
+	float:right;
+}
+.b table{
+	margin: 10px 0 0 0;
+    font-size: 20px;
+	font-family: 'Playfair Display', serif;
+}
+#info{
+	 font-size: 30px;
+	 padding-top: .5em;
+     padding-bottom: .10em;
+}
+.b th{
+	padding-left:30px;
+}
+#total{
+	padding-top: 1em;
+	font-family: 'Playfair Display', serif;
+	font-weight:bold;
+	font-size: 35px;
+}
+
+

@@ -124,7 +124,9 @@
 							$iddd=$_GET['iddd'];
 							mysqli_query($conn,"delete from reg where user_id='$iddd'");
 						}						
-				
+					
+					echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
+
 				?>
 			</tbody>
 		</table>
@@ -222,7 +224,9 @@
 							$iddd=$_GET['iddd'];
 							mysqli_query($conn,"delete from reg where user_id='$iddd'");
 						}						
-				
+					
+					echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
+
 				?>
 			</tbody>
 		</table>
