@@ -176,6 +176,8 @@
 					<th><center>Color</center></th>
 					<th><center>Gender</center></th>
 					<th><center>Location</center></th>
+					<th><center>Status<center></th>
+					<th><center>Action</center></th>
 					<th><center>Action</center></th>
 				</tr>
 			</thead>
@@ -196,6 +198,11 @@
 								<td> <center> <?php echo $row['color']?>
 								<td> <center> <?php echo $row['gender']?>
 								<td> <center> <?php echo $row['location']?>
+								<td> <center> <?php echo $row['status']?>
+								<td> <center>
+									<a href='?act=<?php echo $row['prod_id']?>' class = 'btn btn-default btn-xs'>Activate</a>
+									<a href='?deact=<?php echo $row['prod_id']?>' class = 'btn btn-default btn-xs'>Dectivate</a>
+								</td>
 								<td> <center>
 									<a href='product_insert.php?id=<?php echo $row['prod_id']?>' class="view" title="Insert" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
 									<a href="product_update.php?idd=<?php echo $row['prod_id']?>"class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254; </i></a>
@@ -212,17 +219,17 @@
 						
 						if(isset($_GET['act'])){
 							$act=$_GET['act'];
-							mysqli_query($conn,"update reg set Status='1' where user_id='$act'");
+							mysqli_query($conn,"update products set Status='1' where prod_id='$act'");
 						}
 						
 						if(isset($_GET['deact'])){
 							$deact=$_GET['deact'];
-							mysqli_query($conn,"update reg set Status='0' where user_id='$deact'");
+							mysqli_query($conn,"update products set Status='0' where prod_id='$deact'");
 						}
 						
 						if(isset($_GET['iddd'])){
 							$iddd=$_GET['iddd'];
-							mysqli_query($conn,"delete from reg where user_id='$iddd'");
+							mysqli_query($conn,"delete from products where prod_id='$iddd'");
 						}						
 					
 					echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";

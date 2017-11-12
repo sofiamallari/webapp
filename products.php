@@ -46,14 +46,19 @@ $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id'
 					echo "<tr>";
 					while($row = (mysqli_fetch_assoc($query))){
 						if($i%3 == 0){
-							echo "</tr><td>";?>
+							echo "</tr><td>";
+							if($row['status'] == 1){?>
 							<a href="../catalog.php?id=<?php echo $row['prod_id']?>">
 							<?php
 							echo "<img src='".$row['location']."' class='images'></a><br>";
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
-							echo "<p class='price'>".$row['price']."</p></footer></td>";								
+							echo "<p class='price'>".$row['price']."</p></footer></td>";		
+							}else{
+							echo "</tr><td>";
+							}
 						}else{
+							if($row['status']==1){
 							echo "<td>";?>
 							<a href="../catalog.php?id=<?php echo $row['prod_id']?>">
 							<?php
@@ -61,6 +66,10 @@ $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id'
 							echo "<footer class='panel-footer'><p class='brand'>".$row['brand']."</p>";
 							echo "<p class='desc'>".$row['description']."</p>";
 							echo "<p class='price'>".$row['price']."</p></footer></td>";	
+							}
+							else{
+								echo "<td>";
+							}
 						}
 						$i++;	
 					}
