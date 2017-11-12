@@ -22,5 +22,53 @@ if(isset($_POST['Update'])){
 	mysqli_query($conn,$r);
 	echo $conn->error;
 }
-//header("location:../admin/admin.php");
+else if(isset($_POST['productUpdate'])){
+				$idd         = $_POST['prod_id'];
+				$brand       = $_POST['brand'];
+				$price       = $_POST['price'];
+				$quantity    = $_POST['quantity'];
+				$description = $_POST['description'];
+				$color       = $_POST['color'];
+				$gender      = $_POST['gender'];
+
+	//$target_dir = "..\\images\\".$brand."\\";
+	$target_dir = "images/".$brand."/";
+	$target_file = $target_dir.basename($_FILES['fileToUpload']['name']);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+	$check = getimagesize($_FILES['fileToUpload']['tmp_name']);
+	if($check !== false)
+		$uploadOk = 1;
+	else
+		$uploadOK = 0;
+
+	$sql = 	"SELECT COUNT(PROD_ID) FROM products WHERE brand = ".'"'.$brand.'"';
+	$brandQuery = mysqli_query($conn, $sql);
+	$brandCount = 0;
+	
+	if($brandQuery){
+		$row    = mysqli_fetch_array($brandQuery);
+		$brandCount = $row['COUNT(PROD_ID)'];  
+	}	
+
+	$filename = basename($_FILES['fileToUpload']['name']);
+	$location = "..\\\images\\\\".$brand."\\\\".$filename;
+			
+	$query = "UPDATE products
+							SET
+
+							`brand`       = '".$brand."',
+							`price`       = '".$price."',
+							`quantity`    = '".$quantity."',
+							`description` = '".$description."',
+							`color`       = '".$color."',
+							`gender`      = '".$gender."',
+							`location`     = '".$location."' where products.prod_id = $idd";													
+	
+	echo $query;
+
+	mysqli_query($conn, $query);
+}
+	header("location:../admin/admin.php");
 ?>
