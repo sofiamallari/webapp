@@ -1,18 +1,16 @@
 <?php ob_start();?>
 <!DOCTYPE HTML>
 <html>
-<head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<head>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script async="" src="https://www.google-analytics.com/analytics.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-<link href="../final/fonts.css" rel="stylesheet">
-<link href="../final/css/underline.css" type="text/css" rel="stylesheet">
-<link href="../final/footer.css" type="text/css" rel="stylesheet">
+<link href="../fonts/fonts.html" rel="stylesheet">
+<link href="../css/products.css" rel="stylesheet">
+<link href="../css/register.css" rel="stylesheet">
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/underline.css" type="text/css" rel="stylesheet">
+<link href="../css/footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
 
 <style>
@@ -153,7 +151,7 @@ navbar-fixed-top {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" ><img src="../final/A.png" id="#logo" class="col-md-6 col-xs-5"></a>
+      <a class="navbar-brand" href="#" ><img src="../images/A.png" id="#logo" class="col-md-6 col-xs-5"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -205,13 +203,12 @@ navbar-fixed-top {
 
 		<li><a href="#">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
-		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 		
 		 <?php
 		
         if(empty($_SESSION['user_id'])){
-          echo "<li><a href='../register/login.php'>Login<span class='sr-only'></span></a></li>";
-          echo "<li><a href='../register/reg.php'>Register<span class='sr-only'></span></a></li>";
+          echo "<li><a href='../login.php'>Login<span class='sr-only'></span></a></li>";
+          echo "<li><a href='../reg.php'>Register<span class='sr-only'></span></a></li>";
         }
 
         else{
@@ -222,11 +219,11 @@ navbar-fixed-top {
           $row = mysqli_fetch_assoc($result);
 		  $name=$row['fname'];
 
-          echo "<li><a href='../register/home.php'>".ucfirst($name)."<span class = 'sr-only></span></a></li>";
+          echo "<li><a href='../home.php'>".ucfirst($name)."<span class = 'sr-only></span></a></li>";
 
-          echo "<li><a href='../register/logout.php'><span class='sr-only'></span></a></li>"; 
+          echo "<li><a href='../logout.php'><span class='sr-only'></span></a></li>"; 
 
-          echo "<li><a href='../register/logout.php'> Logout <span class='sr-only'></span></a></li>";
+          echo "<li><a href='../logout.php'> Logout <span class='sr-only'></span></a></li>";
 
         
 		}

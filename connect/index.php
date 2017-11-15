@@ -14,26 +14,26 @@ include('header.php');
 
 	<div class="carousel-inner ">
     <div class="item active">
-				<a href="#"><video autoplay loop muted width="100%"><source src="../final/images/ap.mp4" type="video/mp4"></video></a>
+				<a href="#"><video autoplay loop muted width="100%"><source src="../images/ap.mp4" type="video/mp4"></video></a>
 				<div class="carousel-caption"></div>
 	</div>
 	<div class="item">
-           <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/bulgari.mp4" type="video/mp4"></video></a>
+           <a href="#"><video autoplay loop muted width="100%" ><source src="../images/bulgari.mp4" type="video/mp4"></video></a>
 			<div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-           <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/graff.mp4" type="video/mp4"></video></a>
+           <a href="#"><video autoplay loop muted width="100%" ><source src="../images/graff.mp4" type="video/mp4"></video></a>
 			<div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-      <a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/rolex.mp4" type="video/mp4"></video></a>
+      <a href="#"><video autoplay loop muted width="100%" ><source src="../images/rolex.mp4" type="video/mp4"></video></a>
       <div class="carousel-caption"></div>
     </div>
 
 	<div class="item">
-		<a href="#"><video autoplay loop muted width="100%" ><source src="../final/images/tiffany.mp4" type="video/mp4"></video></a>
+		<a href="#"><video autoplay loop muted width="100%" ><source src="../images/tiffany.mp4" type="video/mp4"></video></a>
 		<div class="carousel-caption"> </div>
 	</div>
 
@@ -51,7 +51,7 @@ include('header.php');
   <div class="container marg-top">
 		<div class="panel-table-container col-lg-6 col-md-6 col-sm-6"><table class="panel-table">
 			<tr class="body"><td id="wh">
-        <img src="../final/table/rolex1.jpg" class="image col-md-12" height="600px">
+        <img src="../images/table/rolex1.jpg" class="image col-md-12" height="600px">
         <div class="middle  col-xs-7">
           <div class="middle-contain">
             <p class="middle-title">SHOP FOR MEN</p>
@@ -64,7 +64,7 @@ include('header.php');
 		 <div class="panel-table-container col-lg-6 col-md-6 col-sm-6">
 			<table class="panel-table">
 			<tr class="body"><td>
-        <img src="../final/table/bg2.jpg"  class="image col-md-12" height="600px">
+        <img src="../images/table/bg2.jpg"  class="image col-md-12" height="600px">
         <div class="middle col-xs-4">
           <div class="middle-contain1">
             <p class="middle-title1">SHOP FOR WOMEN</p>
@@ -128,12 +128,12 @@ include('header.php');
 <div class="cert col-md-12">
 
 	  <div class="col-md-6">
-		<div class="id playfair">Audemars Piguet <br>Oak Collection <br>
+		<div style="font-family: 'Playfair Display', serif; font-size:70px; color:white; margin-top:50px; font-weight:bold;">Audemars Piguet <br>Oak Collection <br>
 		  <a href="../final/audemars.html" class="btn a playfair"><p class="a">SEE COLLECTION</p></a>
 		</div>
 	  </div>
 	  <div class="col-md-6">
-	  <img src="../final/b13.png">
+	  <img src="../images/table/b13.png">
 	  </div>
 </div>
 
@@ -160,7 +160,7 @@ include('header.php');
  <div class="container">
 	 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3 panel-group">
 			<table class="panel-table">
-			<tr class="body"><td><img src="../final/breg/a4.jpg" width="300px" height="300px"></td></tr>
+			<tr class="body"><td><img src="../images/breguet/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>
@@ -175,7 +175,7 @@ include('header.php');
 
 		 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3">
 			<table class="panel-table">
-			<tr class="body"><td><img src="../final/bv/a4.jpg" width="300px" height="300px"></td></tr>
+			<tr class="body"><td><img src="../images/bv/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>
@@ -190,7 +190,7 @@ include('header.php');
 
 		 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3">
 			<table class="panel-table">
-			<tr class="body"><td><img src="../final/omega/a4.jpg" width="300px" height="300px"></td></tr>
+			<tr class="body"><td><img src="../images/omega/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>
@@ -205,7 +205,7 @@ include('header.php');
 
 		 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3">
 			<table class="panel-table">
-			<tr class="body"><td><img src="../final/breg/a6.jpg" width="300px" height="300px"></td></tr>
+			<tr class="body"><td><img src="../images/breguet/a6.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>

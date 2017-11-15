@@ -70,5 +70,5 @@ else if(isset($_POST['productUpdate'])){
 
 	mysqli_query($conn, $query);
 }
-	header("location:../admin/admin.php");
+	header("location: admin.php");
 ?>

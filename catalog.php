@@ -1,7 +1,7 @@
 <?php
-session_start();
 include('heading.php');
 include('connect/conn.php');
+error_reporting(0);
 $sql=mysqli_query($conn,"Select * FROM reg WHERE user_id = '".$_SESSION['user_id']."'");
 $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."'");
 	
@@ -21,6 +21,10 @@ $query=mysqli_query($conn,"Select * FROM products WHERE prod_id='".$_GET['id']."
 <?php	
 }
 echo "</div>";
+
+if((isset($_GET['id']))==0){
+	echo "Choose from the products";
+}
 if(isset($_POST['wish'])){
 	$b=$_POST['prod_id'];
 	$c=$_SESSION['user_id'];
@@ -48,7 +52,7 @@ if(isset($_POST['cart'])){
 	mysqli_query($conn,$sql);
 
 	echo $conn->error;
-	header("location:../register/cart.php");
+	header("location: cart.php");
 }
 }
 ?>

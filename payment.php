@@ -6,8 +6,8 @@ include('heading.php');
 ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="card/assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="card/assets/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="images/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="images/assets/css/demo.css">
 </head>
 <body>
 <div id="exTab1" class="container">	
@@ -66,9 +66,9 @@ include('heading.php');
                         </select>
                     </div>
                     <div class="form-group" id="credit_cards">
-                        <img src="card/assets/images/visa.jpg" id="visa">
-                        <img src="card/assets/images/mastercard.jpg" id="mastercard">
-                        <img src="card/assets/images/amex.jpg" id="amex">
+                        <img src="images/assets/images/visa.jpg" id="visa">
+                        <img src="images/assets/images/mastercard.jpg" id="mastercard">
+                        <img src="images/assets/images/amex.jpg" id="amex">
                     </div>
                     <div class="form-group" id="pay-now">
                         <a href="receipt.php"><button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button></a>
@@ -171,5 +171,5 @@ include('heading.php');
 			</div>
         </div>
 
-   <script src="card/assets/js/jquery.payform.min.js" charset="utf-8"></script>
-    <script src="card/assets/js/script.js"></script>
+   <script src="images/assets/js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="images/assets/js/script.js"></script>

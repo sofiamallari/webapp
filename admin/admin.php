@@ -9,7 +9,7 @@
 	*/
 	
 	if(empty($_SESSION['user_id']))
-		header("location: ../register/login.php");
+		header("location: ../login.php");
 	
 	ob_start();
 	include('../connect/conn.php');
@@ -30,22 +30,6 @@
 <div class = 'container'>
 	<div class = 'table-wrapper'>
 		<div class = 'table-title'>
-			<div class = 'row'>
-				<div class = 'col-sm-4'>
-					<!--
-					<div class = 'show-entries'>
-						<span> Show </span>
-						<select>
-							<option> 5 </option>
-							<option> 10 </option>
-							<option> 15 </option>
-							<option> 20 </option>
-						</select>
-						<span> entries </span>
-					</div>
-					-->
-				</div>
-				
 				<div class = 'col-sm-4'>
 					<h2 class = 'text-center'> Customer <b>Details</b> </h2>
 				</div>
@@ -125,7 +109,7 @@
 							mysqli_query($conn,"delete from reg where user_id='$iddd'");
 						}						
 					
-					echo "<div style = 'float: right'><a href = '../register/logout.php'>Logout</a></div>";
+					echo "<div style = 'float: right'><a href = '../logout.php'>Logout</a></div>";
 
 				?>
 			</tbody>
@@ -137,21 +121,6 @@
 	<div class = 'table-wrapper'>
 		<div class = 'table-title'>
 			<div class = 'row'>
-				<div class = 'col-sm-4'>
-					<!--
-					<div class = 'show-entries'>
-						<span> Show </span>
-						<select>
-							<option> 5 </option>
-							<option> 10 </option>
-							<option> 15 </option>
-							<option> 20 </option>
-						</select>
-						<span> entries </span>
-					</div>
-					-->
-				</div>
-				
 				<div class = 'col-sm-4'>
 					<h2 class = 'text-center'> Product <b>Details</b> </h2>
 				</div>
