@@ -52,14 +52,14 @@ $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id'
 				case 50:
 					$Price = "where price BETWEEN 40001 and 50000"; 
 					break;
-			}
+	   }}
+	   
 	   ?>
        <div class="panel-table-container col-lg-12">
          <table class="panel-table col-lg-12">
            <tr>
 				<?php
 				$query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'");
-				$color=mysqli_query($conn,"SELECT * FROM products WHERE color= '"$_POST['Color']"' and price BETWEEN ");
 				if (mysqli_num_rows($query) == 0) {
 						echo "No products found";
 						exit;
