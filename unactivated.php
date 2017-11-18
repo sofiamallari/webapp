@@ -16,7 +16,7 @@
 ?>
     <body>
         <div class="col-md-10 col-md-offset-1">
-            <h2> Please Wait for activation</h2>
+            <h2 style="	font-family: 'Playfair Display', serif;"> Please Wait for activation</h2>
         </div>
 
     </body>

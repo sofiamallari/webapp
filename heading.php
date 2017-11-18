@@ -5,6 +5,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet"> 
 <link href="../fonts/fonts.html" rel="stylesheet">
 <link href="../css/products.css" rel="stylesheet">
 <link href="../css/register.css" rel="stylesheet">
@@ -76,6 +77,7 @@
 
 		<li><a href="#">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
+		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 
     <?php
 		session_start();
@@ -83,11 +85,12 @@
           echo "<li><a href='login.php'>Login<span class='sr-only'></span></a></li>";
           echo "<li><a href='register.php'>Register<span class='sr-only'></span></a></li>";
         }
-
-        else{
-
-          include ('connect/conn.php');
-		  
+		else if(($_SESSION['status'])){
+          if($_SESSION['status']==2){
+			header('location:admin/admin.php');
+		  }
+		  else{
+          include ('connect/conn.php');	  
           $result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = '".$_SESSION['user_id']."'");
           $row = mysqli_fetch_assoc($result);
 		  $name=$row['fname'];
@@ -97,9 +100,10 @@
           echo "<li><a href='logout.php'><span class='sr-only'></span></a></li>"; 
 
           echo "<li><a href='logout.php'> Logout <span class='sr-only'></span></a></li>";
+			}
+        }
 
-        
-		}
+       
 
     ?>
 	
@@ -120,14 +124,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div id="carousel-example-generic " class="carousel slide car" data-ride="carousel">
-  <!-- Indicators -->
+<!--<div id="carousel-example-generic " class="carousel slide car" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
-  <!-- Wrapper for slides -->
   <div class="carousel-inner" onclick="alert('clicked')">
     <div class="item active">
       <img src="images\a.jpg" alt="...">
@@ -145,7 +147,7 @@
       </div>
     </div>
   </div>
-  <!-- Controls -->
+
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
@@ -153,3 +155,4 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div> <!-- Carousel -->
+

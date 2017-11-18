@@ -1,17 +1,19 @@
 <?php
-	session_start();
-	
-	/*
-	if(isset($_SESSION['logged_in'])==0)
-		header('Location: ../admin/admin.php');
-	else
-		header('Location: ../register/register.php');
-	*/
-	
-	if(empty($_SESSION['user_id']))
-		header("location: ../login.php");
-	
 	ob_start();
+	session_start();
+
+	if(isset($_SESSION['status'])){
+		
+		if($_SESSION['status']==1){
+		header('Location: ../home.php');
+		}
+		else if($_SESSION['status']==0){
+		header('location: unactivated.php');
+		}
+	}	
+	else if(empty($_SESSION['user_id'])){
+		header("location: ../login.php");
+	}
 	include('../connect/conn.php');
 	include('table.html');
 	

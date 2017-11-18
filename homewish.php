@@ -1,10 +1,4 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title> Alpha Watches Customer </title>
-</head>
 <?php
-	include("heading.php");
     if(empty($_SESSION['user_id'])){
 		header('location: login.php');
 	}
@@ -15,17 +9,16 @@
     $row = mysqli_fetch_assoc($result);
 ?>
 	<body>
-        <h2 class="wishes">Wishlist</h2>
+        <h2 class="wishes" style="margin-bottom:50px; margin-left:100px;">Wishlist</h2>
 		<div class="col-md-10 col-md-offset-1">
             <!-- TABLE FOR WISHLIST -->
             <div class="col-md-12">
-                <table class="table table-bordered">
+                <table class="table" style="margin-bottom:20px;">
                     <thead>
                         <tr>
                             <th>Brand</th>
                             <th>Description</th>
                             <th>Price</th>
-                            <th>Quantity</th>
 			                <th>Actions </th>
                         </tr>
                     </thead>
@@ -41,17 +34,26 @@
                                     echo "<td class='pads'><img src=".$row['location']." class='col-xs-12'></td>";
  								    echo "<td class='pads'>".$row['description']."</td>";
                                     echo "<td class='pads'>$".$row['price']."</td>";
-									echo "<td><form method='post' action='wish.php'><input type='text' value='1' name='quantity' required></td>";
 								    echo "<input type='hidden' value='".$row['prod_id']."' name='prod_id'>";
-				                    echo "<td><button type='submit' name='del_item' value=' ".$row['prod_id']."'> DEL</button></td>";
+				                    echo "<td><form method='post' action='homewish.php'><button type='submit' name='del_item' value=' ".$row['prod_id']."'> DEL</button></td>";
 							    echo "</tr>";
-								}
-                            }								
+								}					
+							}
                         ?>
                     </tbody>
                 </table>
-				<div class="form-group" id="pay-now">
-                     <button type="submit" class="btn btn-default" id="confirm-purchase" name="checkout">Add to Cart</button>
+				<div class="form-group" id="pay-now" >
+                     <button type="submit" class="btn btn-default" id="confirm-purchase" name="checkout" 
+													style="margin-left:550px;
+															width:200px;
+															height:50px;
+															background:#000000;
+															color:#FFFFFF;
+															border:0px;
+															border-bottom:0px;
+															font-family: 'Playfair Display', serif;
+															font-size:25px;">
+															Add to Cart</button>
                  </div>
 				 </form>
             </div>

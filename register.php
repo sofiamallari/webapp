@@ -1,4 +1,16 @@
 <?php
+	session_start();
+	if(isset($_SESSION['status'])){
+		if($_SESSION['status']==1){
+			header('Location: home.php');
+		}
+		else if($_SESSION['status']==0){
+			header('location: unactivated.php');
+		}
+		else if($_SESSION['status']==2){
+			header('location: admin/admin.php');
+		}
+	}
 		if(isset($_POST['register'])){
 		$email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL)); 
 		$password =md5($_REQUEST['password']);
@@ -65,7 +77,7 @@
 <html>
 	<head>
 			<?php 
-			include("heading.php");
+			include("connect/header.php");
 			?>
 			<link href="css/reg.css" type="text/css" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
@@ -77,30 +89,33 @@
 	<body>
 			
 			<h1>Register</h1>
-			<h5>Personal Information &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 
-			&ensp;&ensp;&ensp;Terms and Conditions</h5>
+			<p id="r">Create an Account</p>
+			<hr id="hr">
+			<p id="registered">Fill up all the form</p>
 			
-			<form method = 'post' action = 'register.php'>
-				<div class="form-group col-md-4 forms">
-					<input type="text" name="fname" class="form-control" placeholder="First name" required>
+			<form method = 'post' action = 'register.php' class="col-md-6">
+				<div class="form-group forms">
+					<input type="text" name="fname" class="form-control" placeholder="First name" id="form" required>
 					<br>
-					<input type="text" name="lname" class="form-control" placeholder="Last name" required>
+					<input type="text" name="lname" class="form-control" placeholder="Last name" id="form" required>
 					<br>
-					<input type="text" name="mname" class="form-control" placeholder="Middle name" required>
+					<input type="text" name="mname" class="form-control" placeholder="Middle name" id="form" required>
 					<br>
-					<input type="email" name="email" class="form-control" placeholder="Email Address" required>
+					<input type="email" name="email" class="form-control" placeholder="Email Address" id="form" required>
 					<br>
-					<input type="password" name="password" class="form-control" placeholder="Password" required>
+					<input type="password" name="password" class="form-control" placeholder="Password" id="form" required>
 					<br>
 					  <input type="radio" name="gender" value="male" checked> Male &nbsp;
 					  <input type="radio" name="gender" value="female"> Female<br>
 					  <br>
-					  <input type = 'submit' name = 'register' value = 'Register' class="submit">					  
+					  <input type = 'submit' name = 'register' value = 'Register' class="submit" id="reg">					  
 					  <input type='hidden' name="Status" value="0">
 				</div>				
 			</form>
-		
-				<div class="col-md-8 terms">
+				
+				<div class="col-md-6 terms">
+				<p id="v">Register an Account</p>
+				<hr id="vv">
 				<p>
 					By clicking on "Register" you agree to The Company's' Terms and Conditions
 				</p>

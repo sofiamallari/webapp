@@ -24,50 +24,63 @@
 		$result = mysqli_query($conn, "SELECT * FROM reg WHERE user_id = $_SESSION[user_id]");
 		$row = mysqli_fetch_assoc($result);
 }
-?>	
-	<div class = "col-sm-12" style="align:center;">
-					<div class = "panel">
+?>
+<div class = "col-sm-9 col-md-offset-2">
+					<div class = "panel ">
 
-						<div class = "panel-heading " style="font-family: 'Playfair Display', serif;
-															font-size:25px; text-align:center;">
-							<h3> Edit Account Information </h3>
+						<div class = "panel-heading" style="font-family: 'Playfair Display', serif;
+															font-size:25px; margin-left:300px; margin-top:50px;">
+							<h3> Billing Information </h3>
 						</div>
 
-						<div class = "panel-body col-sm-9 col-md-offset-2">
+						<div class = "panel-body">
 
 							<form class = 'form-horizontal' method = 'post' action = 'editDetails.php'>
-								
+
 								<div class = "form-group">
-									<label class = "control-label col-sm-2" id="contact"> First Name: </label>
-									<div class = "col-sm-8">
-										<input type = "text" id="form" class = "form-control" name = "fname" value = '<?php echo $row['fname'] ?>'> <br>
+									<label class = "control-label col-sm-2" id="contact"> Contact Information: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2" id="contact"> Middle Name:  </label>
-									<div class = "col-sm-8">
-										<input type = "text" id="form" class = "form-control" name = "mname" value = '<?php echo $row['mname'] ?>'> <br>
+									<label class = "control-label col-sm-2" id="contact"> Street: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "street" value = '<?php echo $row['street'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2" id="contact"> Surname:  </label>
-									<div class = "col-sm-8">
-										<input type = "text" id="form" class = "form-control" name = "lname" value = '<?php echo $row['lname'] ?>'> <br>
+									<label class = "control-label col-sm-2" id="contact"> Barangay: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "barangay" value = '<?php echo $row['barangay'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2" id="contact"> Email: </label>
-									<div class = "col-sm-8">
-										<input type = "email" id="form" class = "form-control" name = "email" value = '<?php echo $row['email'] ?>'> <br>
+									<label class = "control-label col-sm-2" id="contact"> City: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "city" value = '<?php echo $row['city'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2" id="contact"> Zip: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "zip" minlength = "4" value = '<?php echo $row['zip'] ?>'> <br>
+									</div>
+								</div>
+
+								<div class = "form-group">
+									<label class = "control-label col-sm-2" id="contact"> Landmark: </label>
+									<div class = "col-sm-10">
+										<input type = "text" id="form" class = "form-control" name = "landmark" value = '<?php echo $row['landmark'] ?>'> <br>
 									</div>
 								</div>
 
 								<div class = "col-sm-2">
-									<button type = "submit" class = "btn btn-primary" name = 'register' 
-													style="margin-left:250px;
+									<button type = "submit" class = "btn btn-primary" name = 'submit' style="margin-left:250px;
 															width:200px;
 															height:50px;
 															background:#000000;
@@ -75,8 +88,9 @@
 															border:0px;
 															border-bottom:0px;
 															font-family: 'Playfair Display', serif;
-															font-size:25px;"> Modify</button>
+															font-size:25px;"> Update </button>
 								</div>
+								
 								<div class = "col-sm-2">
 									<button type = "submit" class = "btn btn-primary" name = 'back' style="margin-left:300px;
 															width:200px;
@@ -88,7 +102,7 @@
 															font-family: 'Playfair Display', serif;
 															font-size:25px;"> Back</button>
 								</div>
-
+						
 								<div class = "col-sm-6">
 									<input type = "hidden" class = "form-control" name = "Status" value = "0">
 								</div>
@@ -100,36 +114,11 @@
 				</div>
 			</div>
 		</div>
-				
-	<?php
+<?php	
+
 			if(isset($_POST['back'])){
 				header('location:home.php');
 			}
-			if(isset($_POST['register'])){
-
-				//unset($fname, $lname, $mname, $contact, $street, $barangay, $city, $zip, $landmark);	
-				$fname = $_POST['fname'];
-				$lname = $_POST['lname'];
-				$mname = $_POST['mname'];
-				$email = $_POST['email'];
-
-				$sql = "UPDATE reg set 
-						`fname`='".$fname."',
-						`lname`='".$lname."',
-						`mname`='".$mname."',
-						`email`='".$email."'
-						WHERE `user_id`='".$row['user_id']."'
-						";
-				 
-				if((!(ctype_alpha($fname))) && (!(ctype_alpha($lname))) && (!(ctype_alpha($mname))))
-					echo "<div class = 'container'> <h3> <font color = 'red'> Only characters are allowed. <br> </div>";
-				else{
-					mysqli_query($conn,$sql);
-					echo $conn->error;
-					header("location:home.php");
-				}
-			}
-			
 
 			if(isset($_POST['submit'])){
 
@@ -167,6 +156,4 @@
 					header("location:home.php");
 				}
 			}
-?>
-
-</html>
+?>	

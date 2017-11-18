@@ -32,22 +32,46 @@
 	</head>
 
 	<body>
+	<div class="col-md-12">
+	<div class="col-md-6">
+		<h3 id="login">Login</h3>
+		<p id="r">Registered Customers</p>
+		<hr id="hr">
+		<p id="registered">For registered customers, login using your email address</p>
+	
 		<form method = 'post' action = ''>
-		<div class="form-group col-md-4 forms">
-			<input type = 'email' name = 'email' placeholder = 'email' class="form-control" required>
+		<div class="form-group forms">
+			<input type = 'email' name = 'email' placeholder = 'email' class="form-control" id="form" required>
 			<br>
-			<input type = 'password' name = 'password' placeholder = 'password' class="form-control" required>
+			<input type = 'password' name = 'password' placeholder = 'password' class="form-control"  id="form" required>
 			<br>
-			<input type = 'submit' name = 'login' value = 'Login'>
-			<br>
-			<br>
-			No Account? <a href = 'register.php'>Register here</a>.
-		<div>
-		</form>		
+			<input type = 'submit' name = 'login' value = 'Login' id="log">
+			
+		</div>
+		</form>	
+	</div>
+	
+	<div class="col-md-6">
+		<h3 id="login">Register</h3>
+		<p id="r">Register an Account</p>
+		<hr id="hr">
+		<p id="registered">In creating an Account, the user has the priviledge to view the products. <br> In order to buy a product the user must be registered</p>
+	
+		<form method = 'post' action = ''>
+		<div class="form-group  forms">
+		<input type = 'submit' name='register' href="register.php" value = 'Register' id="log">
+		</div>
+		</form>	
+	</div>
+	</div>
+	
 	</body>
 </html>
 
 	<?php
+	if(isset($_POST['register'])){
+		header('location:register.php');
+	}
 	if(isset($_POST['login'])){
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);

@@ -1,10 +1,15 @@
 <?php ob_start();?>
 <!DOCTYPE HTML>
 <html>
-<head>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<head><meta charset="utf-8"><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 <link href="../fonts/fonts.html" rel="stylesheet">
 <link href="../css/products.css" rel="stylesheet">
 <link href="../css/register.css" rel="stylesheet">
@@ -12,131 +17,6 @@
 <link href="../css/underline.css" type="text/css" rel="stylesheet">
 <link href="../css/footer.css" type="text/css" rel="stylesheet">
 <title>Alpha: Wrist Watch</title>
-
-<style>
-.middle {
-  transition: .5s ease;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  width: 24em;
-  align-content: center;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%)
-}
-.image {
-  opacity: 0.9;
-  display: block;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  z-index: -1;
-}
-.middle-text {
- color: black;
-  font-size: 1em;
-  font-family: 'Oswald', sans-serif;
-}
-.middle-title{
-  color:black;
-  font-size: 2em;
-  font-family: 'Playfair Display', serif;
-}
-.middle-title1{
-  color:black;
-  font-size: 2em;
-  font-family: 'Playfair Display', serif;
-
-}
-
-.middle-contain{
-    height: 12em;
-    padding-left: 3em;
-    padding-top: 3em;
-    background-color: white;
-    align-content: center;
-    align-self: center;
-}
-.middle-contain1{
-    height: 12em;
-    padding-left: 2.5em;
-    padding-top: 3em;
-    background-color: white;
-    align-content: center;
-    align-self: center;
-}
-.middle-btn{
-  border-style: inset !important;
-  border-color: black;
-  margin-left: 4em;
-}
-.middle-btn1{
-  border-style: inset !important;
-  border-color: black;
-  margin-left: 5em;
-}
-.navbar , .btn-new{
-	background:black;
-}
-navbar-fixed-top {
-    min-height: 80px;
-}
-.navbar-fixed-top .navbar-collapse {
-    max-height: 80px;
-}
-
-@media (min-width: 768px) {
-    .navbar-fixed-top .navbar-collapse {
-        max-height: 100px;
-    }
-}
-.navbar .navbar-brand{
-	height: 100px;
-}
-.nav{
-	position:relative;
-	top:20px;
-	font-family: 'Playfair Display', serif;
-	font-size:15pt;
-}
-#brand{
-	text-align:center;
-	font-family: 'Playfair Display', serif;
-	font-size:12pt;
-}
-
-.cert{
-	height:500px;
-	width:100%;
-	background:black;
-	position:relative;
-	top:100px;
-}
-.id{
-	height:350px;
-	position:relative;
-	top:100px;
-	font-size:4em;
-	color:#eaeaea;
-	text-align:left;
-	font-family: 'Abril Fatface', cursive;
-}
-.a{
-	color:#eaeaea;
-	font-size:15px;
-}
-
-.brand , .desc ,.price{
-	text-align:center;
-}
-
-@media (min-width: 768px) {
-    .container, .panel-table,  {
-        max-height: 100px;
-		max-width: 500px;
-    }
-}
-
-</style>
 </head>
 <body>
 
@@ -203,12 +83,13 @@ navbar-fixed-top {
 
 		<li><a href="#">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
+		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 		
 		 <?php
 		
         if(empty($_SESSION['user_id'])){
           echo "<li><a href='../login.php'>Login<span class='sr-only'></span></a></li>";
-          echo "<li><a href='../reg.php'>Register<span class='sr-only'></span></a></li>";
+          echo "<li><a href='../register.php'>Register<span class='sr-only'></span></a></li>";
         }
 
         else{
