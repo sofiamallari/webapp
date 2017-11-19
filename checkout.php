@@ -10,8 +10,8 @@ include("heading.php");
 		$row = mysqli_fetch_assoc($result);
 		echo "<h1 class='checks'>Checkout</h1>";
 		
-		$sql = "SELECT SUM(PRODUCTS.PRICE) FROM ORDERS, PRODUCTS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-		$r="SELECT * FROM ORDERS";
+		$sql = "SELECT SUM(PRODUCTS.PRICE) FROM orders, PRODUCTS WHERE orders.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
+		$r="SELECT * FROM orders";
 		$result = mysqli_query($conn,$sql);
 		$rows= mysqli_query($conn,$r);
 	}

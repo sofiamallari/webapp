@@ -127,8 +127,8 @@ include('heading.php');
 								echo "<tr><td>Address:".ucfirst($row['street'])." ".ucfirst($row['barangay'])." ".ucfirst($row['city'])."</td></tr>";	
 								echo "<tr><td>Contact Number:".ucfirst($row['contact'])."</td></tr>";	
 							
-							$que="SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-							$sql="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$que="SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, orders WHERE orders.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = orders.PROD_ID";
+							$sql="SELECT * FROM orders WHERE orders.USER_ID='".$_SESSION['user_id']."'";
 							$a=mysqli_query($conn,$que);
 							$result=mysqli_query($conn,$sql);
 							while (($rew =  mysqli_fetch_assoc($a)) && ($r = mysqli_fetch_assoc($result))){

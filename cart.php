@@ -46,10 +46,12 @@
 							    echo "</tr>";
 								}
                             }
-							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-							$q="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, orders WHERE orders.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = orders.PROD_ID";
+							$q="SELECT * FROM orders WHERE orders.USER_ID='".$_SESSION['user_id']."'";
 							$result = mysqli_query($conn,$sql);
+							echo $conn->error;
 							$res= mysqli_query($conn,$q);
+							
 							while (($rew =  mysqli_fetch_assoc($result)) && ($r = mysqli_fetch_assoc($res))){
 	
 								$s= $rew['SUM(PRODUCTS.PRICE)'] * $r['quantity'];

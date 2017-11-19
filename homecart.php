@@ -26,7 +26,7 @@
                             $query = "SELECT * FROM products JOIN orders ".
 	                            "where orders.prod_id = products.prod_id and ".
                                 "orders.user_id = '".$_SESSION['user_id']."'";
-							$join="SELECT quantity FROM ORDERS";
+							$join="SELECT quantity FROM orders";
 							
                             $result = mysqli_query($conn, $query);
                             while($row =(mysqli_fetch_assoc($result))) {
@@ -41,8 +41,8 @@
 							    echo "</tr>";
 								}
 							}
-							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-							$q="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, orders WHERE orders.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = orders.PROD_ID";
+							$q="SELECT * FROM orders WHERE orders.USER_ID='".$_SESSION['user_id']."'";
 							$result = mysqli_query($conn,$sql);
 							$res= mysqli_query($conn,$q);
 							while (($rew =  mysqli_fetch_assoc($result)) && ($r = mysqli_fetch_assoc($res))){
