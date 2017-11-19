@@ -73,9 +73,6 @@
           </ul>
         </li>
 
-
-		<li><a href="#">Features<span class="sr-only"></span></a></li>
-		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
 		
 		  <?php
 			if(empty($_SESSION['user_id'])){
