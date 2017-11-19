@@ -46,9 +46,7 @@ if(isset($_POST['cart'])){
 	$res=mysqli_fetch_assoc($a);
 	echo $b;
 	if($res){
-
 			$sql = "UPDATE orders SET quantity = quantity + 1 WHERE user_id = ".$c ." AND prod_id = ".$b;
-
 			mysqli_query($conn,$sql);
 			header("location: ../cart.php");
 			echo "this".$conn->error;

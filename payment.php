@@ -77,8 +77,7 @@ include('heading.php');
             </div>
         </div>
 
-        <p class="examples-note">Here are some dummy credit card numbers and CVV codes so you can test out the form:</p>
-
+ 
         <!--<div class="examples">
             <div class="table-responsive">
                 <table class="table table-hover">
@@ -116,7 +115,7 @@ include('heading.php');
 				
 			<div class="tab-pane col-md-12" id="2a">
             <div class="a"  style="margin-top:30px;">
-			<table class="col-md-9">
+			<table class="col-md-8">
 					<tr><td id="info">Personal Information</td></tr>
 						<?php
 						   include('connect/conn.php');
@@ -159,9 +158,9 @@ include('heading.php');
                             $res=mysqli_query($conn,$query);
 							while($row = mysqli_fetch_assoc($res)){
 								echo "<tr>";
-								echo "<td colspan=1><img class='col-md-12' src='".$row['location']." '/></td>";
-								echo "<td class='col-md-2' colspan=2>".$row['quantity']."</td>";
-								echo "<td class='col-md-2' colspan=2>".$row['price']."</td>";
+								echo "<td colspan=1><img class='col-md-9' src=' ".$row['location']." '/></td>";
+								echo "<td class='col-md-2' colspan=2> ".$row['quantity']."</td>";
+								echo "<td class='col-md-2' colspan=2> ".$row['price']."</td>";
 								echo "</tr>";
 							}
 						

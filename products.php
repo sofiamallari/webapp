@@ -17,16 +17,6 @@ $query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'
 		 <form name="myform" style="margin-left:50px; font-family:'Playfair Display', serif; -webkit-appearance: none; ">
 		   <?php $row=mysqli_fetch_assoc($query);?>
 		   <label style="font-family: 'Pinyon Script', cursive; margin-left:550px; font-size:40px;"><?php echo ucfirst($row['brand'])?></label>
-		   <label class="cc" id="colors"> Color:</label>
-           <select class="cc" name="Color" onchange="submitForm();">
-			 <option/>
-             <option value="gold">Gold
-             <option value="rose">Rose
-             <option value="white">White
-             <option value="black">Black
-             <option value="silver">Silver
-             <option value="brown">Brown
-           </select>
          </form>
 		 <script type="text/javascript">
 			function submitform()
