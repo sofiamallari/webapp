@@ -10,8 +10,8 @@ include("heading.php");
 		$row = mysqli_fetch_assoc($result);
 		echo "<h1 class='checks'>Checkout</h1>";
 		
-		$sql = "SELECT SUM(PRODUCTS.PRICE) FROM ORDERS, PRODUCTS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-		$r="SELECT * FROM ORDERS";
+		$sql = "SELECT SUM(products.price) FROM orders, products WHERE orders.user_id='".$_SESSION['user_id']."' and products.prod_id = orders.prod_id";
+		$r="SELECT * FROM orders";
 		$result = mysqli_query($conn,$sql);
 		$rows= mysqli_query($conn,$r);
 	}
@@ -31,7 +31,7 @@ include("heading.php");
 									<tr>
 										<th>Total Bill:</th>
 										<?php while ($rew =  mysqli_fetch_assoc($result)){
-											echo "<td>$".$rew['SUM(PRODUCTS.PRICE)']."</td>";
+											echo "<td>$".$rew['SUM(products.price)']."</td>";
 										}?>
 										<th>Street: </th>
 										<td><?php echo ucfirst($row['street']);?> </td>

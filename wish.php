@@ -69,11 +69,11 @@
 		$b=$_POST['prod_id'];
 		$c=$_SESSION['user_id'];
 	
-	$query = "SELECT * FROM ORDERS WHERE USER_ID = ". $c ." AND PROD_ID = ".$b;
+	$query = "SELECT * FROM orders WHERE user_id = ". $c ." AND prod_id = ".$b;
 	$res = mysqli_fetch_assoc(mysqli_query( $conn , $query));
 	echo $conn->error;
 	if($res){
-			$sql = "UPDATE ORDERS SET QUANTITY = QUANTITY + 1 WHERE USER_ID = ".$c ." AND PROD_ID = ".$b;
+			$sql = "UPDATE orders SET quantity = quantity + 1 WHERE user_id = ".$c ." AND prod_id = ".$b;
 			mysqli_query($conn,$sql);
 	}else{
 			$sql="Insert into orders(user_id,prod_id,quantity)

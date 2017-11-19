@@ -127,12 +127,12 @@ include('heading.php');
 								echo "<tr><td>Address:".ucfirst($row['street'])." ".ucfirst($row['barangay'])." ".ucfirst($row['city'])."</td></tr>";	
 								echo "<tr><td>Contact Number:".ucfirst($row['contact'])."</td></tr>";	
 							
-							$que="SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-							$sql="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$que="SELECT SUM(products.price) FROM products, orders WHERE orders.user_id='".$_SESSION['user_id']."' and products.prod_id = orders.prod_id";
+							$sql="SELECT * FROM orders WHERE orders.user_id='".$_SESSION['user_id']."'";
 							$a=mysqli_query($conn,$que);
 							$result=mysqli_query($conn,$sql);
 							while (($rew =  mysqli_fetch_assoc($a)) && ($r = mysqli_fetch_assoc($result))){
-								$s= $rew['SUM(PRODUCTS.PRICE)'] * $r['quantity'];
+								$s= $rew['SUM(products.price)'] * $r['quantity'];
 								echo "<tr><td id='total'>Cart Total: $".$s."</td></tr>";
 								
 							}	

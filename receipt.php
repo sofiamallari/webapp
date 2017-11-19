@@ -21,13 +21,13 @@ include('connect/conn.php');
 				                    echo "<td style='padding-bottom:20px;'>".$row['quantity']."</td>";
 				                echo "</tr>";
                             }
-							$sql = "SELECT SUM(PRODUCTS.PRICE) FROM PRODUCTS, ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."' and PRODUCTS.PROD_ID = ORDERS.PROD_ID";
-							$q="SELECT * FROM ORDERS WHERE ORDERS.USER_ID='".$_SESSION['user_id']."'";
+							$sql = "SELECT SUM(products.price) FROM products, orders WHERE orders.user_id='".$_SESSION['user_id']."' and products.prod_id = orders.prod_id";
+							$q="SELECT * FROM orders WHERE orders.user_id='".$_SESSION['user_id']."'";
 							$result = mysqli_query($conn,$sql);
 							$res= mysqli_query($conn,$q);
 							while (($rew =  mysqli_fetch_assoc($result)) && ($r = mysqli_fetch_assoc($res))){
 	
-								$s= $rew['SUM(PRODUCTS.PRICE)'] * $r['quantity'];
+								$s= $rew['SUM(products.price)'] * $r['quantity'];
 								echo "<td style='left:400px;'>Cart Total: $".$s."</td>";
 								
 							}								

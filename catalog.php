@@ -39,12 +39,12 @@ if(isset($_POST['wish'])){
 if(isset($_POST['cart'])){
 	$b=$_POST['prod_id'];
 	$c=$_SESSION['user_id'];
-	$query = "SELECT QUANTITY FROM ORDERS WHERE USER_ID = ". $c ." and PROD_ID = ".$b;
+	$query = "SELECT quantity FROM orders WHERE user_id = ". $c ." and prod_id = ".$b;
 	$a = mysqli_query( $conn , $query);
 	$res=mysqli_fetch_assoc($a);
 	echo $b;
 	if($res){
-			$sql = "UPDATE ORDERS SET QUANTITY = QUANTITY + 1 WHERE USER_ID = ".$c ." AND PROD_ID = ".$b;
+			$sql = "UPDATE orders SET quantity = quantity + 1 WHERE user_id = ".$c ." AND prod_id = ".$b;
 			mysqli_query($conn,$sql);
 			header("location: ../cart.php");
 			echo "this".$conn->error;
