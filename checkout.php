@@ -11,6 +11,7 @@ include("heading.php");
 		echo "<h1 class='checks'>Checkout</h1>";
 		
 		$sql = "SELECT SUM(products.price) FROM orders, products WHERE orders.user_id='".$_SESSION['user_id']."' and products.prod_id = orders.prod_id";
+
 		$r="SELECT * FROM orders";
 		$result = mysqli_query($conn,$sql);
 		$rows= mysqli_query($conn,$r);

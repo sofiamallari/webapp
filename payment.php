@@ -129,6 +129,7 @@ include('heading.php');
 							
 							$que="SELECT SUM(products.price) FROM products, orders WHERE orders.user_id='".$_SESSION['user_id']."' and products.prod_id = orders.prod_id";
 							$sql="SELECT * FROM orders WHERE orders.user_id='".$_SESSION['user_id']."'";
+
 							$a=mysqli_query($conn,$que);
 							$result=mysqli_query($conn,$sql);
 							while (($rew =  mysqli_fetch_assoc($a)) && ($r = mysqli_fetch_assoc($result))){

@@ -75,7 +75,9 @@
 	$res = mysqli_fetch_assoc(mysqli_query( $conn , $query));
 	echo $conn->error;
 	if($res){
+
 			$sql = "UPDATE orders SET quantity = quantity + 1 WHERE user_id = ".$c ." AND prod_id = ".$b;
+
 			mysqli_query($conn,$sql);
 	}else{
 			$sql="Insert into orders(user_id,prod_id,quantity)

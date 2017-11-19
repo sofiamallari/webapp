@@ -14,11 +14,11 @@
 	*/
 
 	// procedural implementation
-	$conn = mysqli_connect("localhost", "root", "", "registration");
+	$conn = mysqli_connect("mysql.hostinger.com", "u302811006_root", "affirmative", "u302811006_db");
 	//echo mysqli_connect_errno(); // returns 1 if there's an error else 0
 
 	// oop implementation
-	$conn2 = new mysqli("localhost", "root", "", "registration");
+	$conn2 = new mysqli("mysql.hostinger.com", "u302811006_root", "affirmative", "u302811006_db");
 	//echo $conn2->connect_errno;  // returns 1 if there's an error else 0
 
 ?>
