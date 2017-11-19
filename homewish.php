@@ -84,7 +84,7 @@
 			VALUES('$c','$b',1)";
 			mysqli_query($conn,$sql);
 			echo $conn->error;
-			header("index.php");
+			header("location: index.php");
 	}
 }
 ?>
