@@ -138,9 +138,9 @@
     font-size: 14px;
 }
 .a{
-	max-width: 700px;
+	width: 500px;
 	background-color: #fff;
-	padding: 100px 50px;
+	padding: 100px 0px;
 	color: #4c4e56;
 	float:left;
 }
@@ -155,7 +155,7 @@
 	max-width: 700px;
 	background-color: #fff;
 	margin: 0 auto 100px;
-	padding: 100px 100px;
+	padding: 100px 50px;
 	color: #4c4e56;
 	float:right;
 }

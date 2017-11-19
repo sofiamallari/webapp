@@ -79,7 +79,7 @@ include('heading.php');
 
         <p class="examples-note">Here are some dummy credit card numbers and CVV codes so you can test out the form:</p>
 
-        <div class="examples">
+        <!--<div class="examples">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>
@@ -108,15 +108,15 @@ include('heading.php');
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 				
 				
 				
-			<div class="tab-pane" id="2a">
-            <div class="a">
-			<table>
+			<div class="tab-pane col-md-12" id="2a">
+            <div class="a"  style="margin-top:30px;">
+			<table class="col-md-9">
 					<tr><td id="info">Personal Information</td></tr>
 						<?php
 						   include('connect/conn.php');
@@ -142,8 +142,8 @@ include('heading.php');
                         <a href="receipt.php"><button type="submit" class="btn btn-default" id="confirm-purchase" name="confirm">Confirm</button></a>
                     </div>
 			</div>
-			<div class="b">
-                <table class="table table-hover">
+			<div class="b" style="margin-top:30px;">
+                <table class="table table-hover col-md-9" style="margin-right:100px;">
                     <thead>
                         <tr>
                             <th colspan='1'>Items Ordered</th>
@@ -158,7 +158,7 @@ include('heading.php');
                             $res=mysqli_query($conn,$query);
 							while($row = mysqli_fetch_assoc($res)){
 								echo "<tr>";
-								echo "<td colspan=1><img class='col-md-4' src='".$row['location']." '/></td>";
+								echo "<td colspan=1><img class='col-md-12' src='".$row['location']." '/></td>";
 								echo "<td class='col-md-2' colspan=2>".$row['quantity']."</td>";
 								echo "<td class='col-md-2' colspan=2>".$row['price']."</td>";
 								echo "</tr>";

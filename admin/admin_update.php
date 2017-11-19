@@ -11,9 +11,9 @@ $row=mysqli_fetch_assoc($query);
 <link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css?family=Manuale|Playfair+Display:400i" rel="stylesheet"> 	
 </head>
-
-<h1>Update Records</h1>
-<form method="POST" action="update.php">
+<h1 style="	font-size:30px;
+	font-family: 'Playfair Display', serif; margin:110px 50px 50px 50px; ">Update Records</h1>
+<form method="POST" action="update.php" style="margin-left:40px;">
 <div class="form-group col-md-4 forms">
 	<input type = 'text' name = 'user_id' value="<?php echo $row['user_id']?>" class="form-control" hidden>
 	<br>
@@ -32,7 +32,7 @@ $row=mysqli_fetch_assoc($query);
 	<br>
 	<input type = 'hidden' name = 'Status' label="status" value='0'>
 	<br>
-	<input type="submit" name="Update" value="Update">
-	<a href="admin.php">Back</a>
+	<input type="submit" name="Update" value="Update" style="background:#998100; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;">
+	<a href="admin.php"><Button style="background:#000000; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;"> Back <button></a>
 </div>
 </form>

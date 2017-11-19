@@ -15,9 +15,10 @@ if($query){
 <link href="https://fonts.googleapis.com/css?family=Manuale|Playfair+Display:400i" rel="stylesheet"> 	
 </head>
 
-<h1>Insert Records</h1>
+<h1 style="	font-size:30px;
+	font-family: 'Playfair Display', serif; margin:110px 50px 50px 50px; ">Insert Records</h1>
 
-<form method="POST" action="insert.php">
+<form method="POST" action="insert.php" style="margin:0px 50px 0px 50px;">
 <div class="form-group col-md-4 forms">
 	<input type = 'email' name = 'email' placeholder ="email" class="form-control" required>
 	<br>
@@ -34,7 +35,7 @@ if($query){
 	<br>
 	<input type = 'hidden' name = 'Status' label="status" value='0'>
 	<br>
-	<input type="submit" name="Insert" value="Insert">
-	<a href="admin.php">Back</a>
+	<input type="submit" name="Insert" value="Insert" style="background:#998100; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;">
+	<a href="admin.php"><input value="Back" style="background:#000000; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif; text-align:center;"></a>
 </div>
 	

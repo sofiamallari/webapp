@@ -8,6 +8,7 @@ $sql=mysqli_query($conn,"SELECT * FROM reg WHERE user_id= '".$_SESSION['user_id'
 $query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."' ");
 
 ?>
+<body class="body">
 		<div style="width:100% height:200px;">
 		<image src="images\luxury.jpg" style="width:1230px; margin-left:60px; margin-top:30px; margin-bottom:50px;">
 		</div>
@@ -78,4 +79,5 @@ $query=mysqli_query($conn,"SELECT * FROM products WHERE brand= '".$_GET['id']."'
 		   </tr>
 		</table>
 	</div>
+</body>
 </html>

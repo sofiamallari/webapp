@@ -17,9 +17,10 @@
 	</style>
 </head>
 
-<h1> Update Product</h1>
+<h1 style="	font-size:30px;
+	font-family: 'Playfair Display', serif; margin:110px 50px 50px 50px; ">Update Product</h1>
 
-<form method = 'POST' action = 'update.php' enctype = 'multipart/form-data'>
+<form method = 'POST' action = 'update.php' enctype = 'multipart/form-data' style="margin-left:40px;">
 	<div class = 'form-group col-md-4 forms'>
 		<input type = 'hidden' name = 'prod_id' value = <?php echo (int) $_GET['idd'] ?> class = 'form-control'>
 
@@ -78,7 +79,7 @@
 		<label for = 'fileToUpload'> Update image: </label>
 		<input type = 'file' name = 'fileToUpload' id = 'fileToUpload'> <br>
 		
-		<input type = 'submit' size = '20' name = 'productUpdate' value = 'Update'>
-		<a href = 'admin.php'> Back </a>
+		<input type = 'submit' size = '20' name = 'productUpdate' value = 'Update' style="background:#998100; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;">
+		<a href = 'admin.php'> <button style="background:#000000; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;"> Back <button></a>
 		
 		

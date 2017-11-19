@@ -75,9 +75,9 @@
           </ul>
         </li>
 
-		<li><a href="#">Features<span class="sr-only"></span></a></li>
-		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
-		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
+		<li><a href="connect/index.php#features">Features<span class="sr-only"></span></a></li>
+		<li><a href="connect/index.php#footer">About us<span class="sr-only"></span></a></li>
+		<li><a href="connect/index.php#footer">Contact us<span class="sr-only"></span></a></li>
 
     <?php
 		session_start();
@@ -102,57 +102,6 @@
           echo "<li><a href='logout.php'> Logout <span class='sr-only'></span></a></li>";
 			}
         }
-
-       
-
     ?>
-	
-      <!--<form class="navbar-form pull-right">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-		<div class="btn-group">
-        <button type="button" class="btn btn-default btn-lg btn-new">
-		        <span class="glyphicon glyphicon-search new-glyph" aria-hidden="true"> </span>
-        </button>
-        <button type="button" class="btn btn-default btn-lg btn-new">
-		        <span class="glyphicon glyphicon-shopping-cart new-glyph" aria-hidden="true"> </span>
-	      </button>
-		</div>
-      </form>-->
-	  </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
 </nav>
-<!--<div id="carousel-example-generic " class="carousel slide car" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" onclick="alert('clicked')">
-    <div class="item active">
-      <img src="images\a.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="images\b.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-    <div class="item">
-      <img src="images\rolex.jpg" alt="...">
-      <div class="carousel-caption">
-      </div>
-    </div>
-  </div>
-
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div> <!-- Carousel -->
 

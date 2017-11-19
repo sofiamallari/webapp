@@ -74,9 +74,9 @@ include("heading.php");
 							<form class = 'form-horizontal' method = 'post' action = 'checkout.php'>
 
 								<div class = "form-group">
-									<label class = "control-label col-sm-2 info"> Contact Information: </label>
+									<label class = "control-label col-sm-2 info" id="contact"> Contact Information: </label>
 									<div class = "col-sm-10">
-										<input type = "text" class = "form-control info" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
+										<input type = "text" class = "form-control info" id="form" name = "contact" minlength = "11" value = '<?php echo $row['contact'] ?>'> <br>
 									</div>
 								</div>
 

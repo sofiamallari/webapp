@@ -64,7 +64,6 @@
 		</form>	
 	</div>
 	</div>
-	
 	</body>
 </html>
 
@@ -85,10 +84,10 @@
 
 			if($result){
                 if((preg_match('/\./', $email)) == 0){
-                    echo "Invalid email address.";
+                    echo "<p id='errors'>Invalid Email Address</p>";
                 }
                 else if($result->num_rows == 0){
-                    echo "Invalid Email or Password";
+                    echo "<p id='errors'>Invalid Email or Password</p>";
                 }
                 else{
 			$row = $result->fetch_assoc();

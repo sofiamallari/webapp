@@ -146,13 +146,9 @@ include('header.php');
 <br><br><br><br><br><br><br><br>
 
 <!-- Brand tag -->
-<div class="col-sm-12 col-md-12 col-xs-12 col-md-11 col-lg-11 ubody">
-    <div class="u-container col-md-9 col-md-offset-2">
-      <ul class="col-md-12">
-        <li class="u-li"><a class="u-a playfair" href="../products.php?id=alange">Male</a></li>
-        <li class="u-li two"><a class="u-a playfair" href="../products.php?id=audemars">Female</a></li>
-        <hr/>
-      </ul>
+<div class="col-md-12 col-xs-12 col-md-11 col-lg-11 ubody">
+    <div class="u-container col-md-9">
+		<p style="text-align:center; font-size:30px; font-family: 'Playfair Display', serif;"> Featured Products </p>
     </div>
 		<hr class="style18 col-md-11 col-md-offset-1">
 	</div>
@@ -163,14 +159,14 @@ include('header.php');
 
 
  <div class="container">
-	 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3 panel-group">
+	 <div class="panel-table-container col-lg-3 col-md-3 col-sm-3 panel-group" id="features">
 			<table class="panel-table">
 			<tr class="body"><td><img src="../images/breguet/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>
-				<p class="desc playfair">Automatic Chronograph Men</p>
-				<p class="price playfair">$1495.00</p>
+				<p class="desc playfair">Tradition Automatic Skeleton</p>
+				<p class="price playfair" style="margin-left:60px;">$17950</p>
 				</footer>
 				</td>
 				</tr>
@@ -183,9 +179,9 @@ include('header.php');
 			<tr class="body"><td><img src="../images/bv/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
-				<p class="brand playfair">Breguet</p>
-				<p class="desc playfair">Automatic Chronograph Men</p>
-				<p class="price playfair">$1495.00</p>
+				<p class="brand playfair">Bvlgari</p>
+				<p class="desc playfair">White Lacquered Dial</p>
+				<p class="price playfair" style="margin-left:60px;">$4095</p>
 				</footer>
 				</td>
 				</tr>
@@ -198,9 +194,9 @@ include('header.php');
 			<tr class="body"><td><img src="../images/omega/a4.jpg" width="300px" height="300px"></td></tr>
 			 <tr><td>
 				<footer class="panel-footer">
-				<p class="brand playfair">Breguet</p>
-				<p class="desc playfair">Automatic Chronograph Men</p>
-				<p class="price playfair">$1495.00</p>
+				<p class="brand playfair">Omega</p>
+				<p class="desc playfair">Constellation Dial Silver</p>
+				<p class="price playfair" style="margin-left:60px;">$1595</p>
 				</footer>
 				</td>
 				</tr>
@@ -214,8 +210,8 @@ include('header.php');
 			 <tr><td>
 				<footer class="panel-footer">
 				<p class="brand playfair">Breguet</p>
-				<p class="desc playfair">Automatic Chronograph Men</p>
-				<p class="price playfair">$1495.00</p>
+				<p class="desc playfair">Tradition Automatic Skeleton</p>
+				<p class="price playfair" style="margin-left:60px;">$17950</p>
 				</footer>
 				</td>
 				</tr>

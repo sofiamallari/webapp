@@ -33,18 +33,9 @@
 	<div class = 'table-wrapper'>
 		<div class = 'table-title'>
 				<div class = 'col-sm-4'>
-					<h2 class = 'text-center'> Customer <b>Details</b> </h2>
+					<h2 class = 'text-center' style="margin-left:100px;"> Customer Details</h2>
 				</div>
-				
-				<div class = 'col-sm-4'>
-					<div class = 'search-box'>
-						<span class = 'input-group-addon'> <i class = 'material-icons'> &#xE8B6; </i> </span>
-						<input type = 'text' class = 'form-control' placeholder = 'Search&hellip;'>
-					</div>
-				</div>
-			</div>
 		</div>
-		
 		<table class = 'table table-bordered'>
 			<thead>
 				<tr>
@@ -63,6 +54,7 @@
 			
 			<tbody>
 				<tr>
+					<tr><a href="admin_insert.php" class="view" title="Insert" style="color:#000000;">Insert Record</a><tr>
 					<?php
 						while($row = (mysqli_fetch_assoc($result))){
 							if($row['Status'] != 2){
@@ -82,12 +74,12 @@
 									<a href='?deact=<?php echo $row['user_id']?>' class = 'btn btn-default btn-xs'>Dectivate</a>
 								</td>
 								<td> <center>
-									<a href="admin_insert.php?id=<?php echo $row['user_id']?>" class="view" title="Insert" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
 									<a href="admin_update.php?idd=<?php echo $row['user_id']?>"class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254; </i></a>
 									<a href="?iddd=<?php echo $row['user_id']?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
 								</td>
 								</tr>
 				</tr>
+				
 				
 				<?php
 							
@@ -118,6 +110,7 @@
 		</table>
 	</div>
 </div>
+</div>
 			
 <div class = 'container'>
 	<div class = 'table-wrapper'>
@@ -125,13 +118,6 @@
 			<div class = 'row'>
 				<div class = 'col-sm-4'>
 					<h2 class = 'text-center'> Product <b>Details</b> </h2>
-				</div>
-				
-				<div class = 'col-sm-4'>
-					<div class = 'search-box'>
-						<span class = 'input-group-addon'> <i class = 'material-icons'> &#xE8B6; </i> </span>
-						<input type = 'text' class = 'form-control' placeholder = 'Search&hellip;'>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -155,6 +141,7 @@
 			
 						<tbody>
 				<tr>
+					<tr><a href='product_insert.php' class="view" title="Insert" style="color:#000000;">Insert Record<a></tr>
 					<?php
 						while($row = (mysqli_fetch_assoc($product_result))){
 							if(true){
@@ -174,8 +161,7 @@
 									<a href='?act=<?php echo $row['prod_id']?>' class = 'btn btn-default btn-xs'>Activate</a>
 									<a href='?deact=<?php echo $row['prod_id']?>' class = 'btn btn-default btn-xs'>Dectivate</a>
 								</td>
-								<td> <center>
-									<a href='product_insert.php?id=<?php echo $row['prod_id']?>' class="view" title="Insert" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+								<td> <center>						
 									<a href="product_update.php?idd=<?php echo $row['prod_id']?>"class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254; </i></a>
 									<a href="?iddd=<?php echo $row['prod_id']?>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
 								</td>

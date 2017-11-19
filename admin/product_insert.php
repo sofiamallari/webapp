@@ -21,9 +21,10 @@
 	</style>
 </head>
 
-<h1> Insert new product </h1>
+<h1 style="	font-size:30px;
+	font-family: 'Playfair Display', serif; margin:110px 50px 50px 50px; ">Insert Products</h1>
 
-<form method = 'POST' action = 'insert.php' enctype = 'multipart/form-data'>
+<form method = 'POST' action = 'insert.php' enctype = 'multipart/form-data' style="margin-left:40px;">
 	<div class = 'form-group col-md-4 forms'>
 		<input type = 'hidden' name = 'prod_id' value = <?php echo (int) $result ?> class = 'form-control'>
 
@@ -82,7 +83,7 @@
 		<label for = 'fileToUpload'> Insert image: </label>
 		<input type = 'file' name = 'fileToUpload' id = 'fileToUpload'> <br>
 		
-		<input type = 'submit' size = '20' name = 'productInsert' value = 'Insert'>
-		<a href = 'admin.php'> Back </a>
+		<input type = 'submit' size = '20' name = 'productInsert' value = 'Insert' style="background:#998100; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;">
+		<a href = 'admin.php'><button style="background:#000000; padding:0px; border-bottom:0px; width:70px; height:30px; color:#FFFFFF; border:0px; font-family: 'Playfair Display', serif;"> Back </button> </a>
 		
 		

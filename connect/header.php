@@ -81,7 +81,7 @@
         </li>
 
 
-		<li><a href="#">Features<span class="sr-only"></span></a></li>
+		<li><a href="#features">Features<span class="sr-only"></span></a></li>
 		<li><a href="#footer">About us<span class="sr-only"></span></a></li>
 		<li><a href="#footer">Contact us<span class="sr-only"></span></a></li>
 		

@@ -96,3 +96,13 @@ h5{
 	color:#000000; 
 	text-decoration:none;
 }
+#errors{
+	font-family: 'Playfair Display', serif;
+	color:red;
+	margin-left:100px;
+}
+#errorreg{
+	font-family: 'Playfair Display', serif;
+	color:red;
+	margin-left:200px;
+}
